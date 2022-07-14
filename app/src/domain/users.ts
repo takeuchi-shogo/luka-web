@@ -21,6 +21,14 @@ class User {
 
 		this.displayName = ''
 
+		this.screenName = ''
+
+		this.age = 0
+
+		this.gender = ''
+
+		this.email = ''
+
 		if (obj) {
 			_foreach(this, (_value, key) => {
 				if (obj.hasOwnProperty(key)) {

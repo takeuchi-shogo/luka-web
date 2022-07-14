@@ -1,5 +1,7 @@
 # Svelte + Vite + TypeScript + Tailwind.css を使用したサンプルです。
 
+Atomic Design + clean architectureに可能な限り乗っ取って書いていきたいです。
+
 # 追加する機能（現在実装中）
 ・アカウント新規作成
 ・ログイン、ログアウト

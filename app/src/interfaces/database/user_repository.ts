@@ -19,6 +19,17 @@ class UserRepository {
 			callback(error, message, new User(data))
 		})
 	}
+
+
+	post(user: User, callback: (error: any, message: string, data: User) => void) {
+		this._api.post('/users', user, (error, message, data) => {
+			if (error) {
+				callback(error, message, new User(null))
+				return
+			}
+			callback(error, message, new User(data))
+		})
+	}
 }
 
 
