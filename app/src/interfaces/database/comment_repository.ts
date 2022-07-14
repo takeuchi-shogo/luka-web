@@ -1,4 +1,6 @@
 
+import { forEach } from 'lodash'
+
 import Comment from 'src/domain/comments'
 import api from 'src/infrastructure/api'
 
@@ -23,14 +25,14 @@ class CommentRepository {
 	}
 
 
-	getList(params: Object, callback: (error: any, message: string, data: Object) => void) {
+	getList(params: Object, callback: (error: any, message: string, data: any) => void) {
 		this._api.get('/comments', params, (error, message, data) => {
 			let lists = []
 			if (error) {
 				callback(error, message, { lists: lists })
 				return
 			}
-			_foreach(data.lists, (list) => {
+			forEach(data.lists, (list) => {
 				lists.push(new Comment(list))
 			})
 			callback(error, message, { lists: lists })

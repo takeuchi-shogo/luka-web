@@ -1,5 +1,5 @@
 
-import _foreach from 'lodash.foreach'
+import { forEach } from 'lodash'
 
 
 class Thread {
@@ -24,7 +24,7 @@ class Thread {
 		this.description = ''
 
 		if (obj) {
-			_foreach(this, (_value, key) => {
+			forEach(this, (_value, key) => {
 				if (obj.hasOwnProperty(key)) {
 					this[key] = obj[key]
 				}

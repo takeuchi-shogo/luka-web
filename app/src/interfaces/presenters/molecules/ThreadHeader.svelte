@@ -8,5 +8,7 @@
 
 
 <div>
-	<Title bind:title />
+	<Title class="">
+		{ title }
+	</Title>
 </div>

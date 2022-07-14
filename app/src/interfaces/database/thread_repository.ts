@@ -1,4 +1,6 @@
 
+import { forEach } from 'lodash'
+
 import Thread from 'src/domain/threads'
 import api from 'src/infrastructure/api'
 
@@ -30,7 +32,7 @@ class ThreadRepository {
 				callback(error, message, new Thread(null))
 				return
 			}
-			_foreach(data.lists, (list) => {
+			forEach(data.lists, (list) => {
 				lists.push(new Thread(list))
 			})
 			callback(error, message, new Thread(data))

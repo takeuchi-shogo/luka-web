@@ -1,7 +1,9 @@
 <script lang="ts">
 
 	import { onMount } from 'svelte'
+	import { forEach } from 'lodash'
 
+	import CommentRepository from 'src/interfaces/database/comment_repository'
 	import ThreadRepository from 'src/interfaces/database/thread_repository'
 
 	import ThreadHeader from 'src/interfaces/presenters/molecules/ThreadHeader.svelte'
@@ -10,10 +12,10 @@
 
 
 	const _thread = new ThreadRepository
+	const _comment = new CommentRepository
 
-	// let thread: Object = {}
-
-	let lists = []
+	let threads = []
+	let comments = []
 
 	let errorMessage: string = ''
 
@@ -24,7 +26,17 @@
 				errorMessage = message
 				return
 			}
-			lists = data.lists
+			threads = data.lists
+			forEach(threads, (thread) => {
+				_comment.getList({ threadId: thread.id }, (error, _message, data) => {
+					if (error) {
+						return
+					}
+					forEach(data.lists, (list) => {
+						comments.push(new Comment(list))
+					})
+				})
+			})
 		})
 	}
 
@@ -40,12 +52,12 @@
 	{ #if errorMessage }
 		{ errorMessage }
 	{ /if }
-	{ #each lists as list }
+	{ #each threads as thread }
 		<div>
-			<ThreadHeader bind:title={ list.title }/>
+			<ThreadHeader bind:title={ thread.title }/>
 		</div>
 		<div>
-			<ThreadContent bind:thread={ list }/>
+			<ThreadContent bind:thread={ thread }/>
 		</div>
 		<div>
 			<ThreadFooter/>
