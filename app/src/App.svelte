@@ -1,15 +1,28 @@
 <script lang="ts">
-    import TailwindCss from "./lib/TailwindCSS.svelte";
+
+	import { Router, Link, Route } from 'svelte-routing'
+
+	import TopIndex from './interfaces/presenters/pages/top/Index.svelte'
+	import SigininIndex from './interfaces/presenters/pages/signin/Index.svelte'
+	import TailwindCss from './lib/TailwindCSS.svelte'
+
+
 </script>
 
 
 <TailwindCss />
 
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-      <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</h1>
-      <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">Button</button>
-    </div>
-  </div>
-</section>
+<Router>
+	<nav class="navbar w-full bg-white">
+		<Link to="/">top</Link>
+		<Link to="/siginin">siginin</Link>
+		<!-- <Link to="/"></Link>  -->
+	</nav>
+	<main>
+		<Route path="" component={ TopIndex } />
+
+		<Route path="/siginin">
+			<SigininIndex />
+		</Route>
+	</main>
+</Router>

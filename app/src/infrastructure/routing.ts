@@ -1,7 +1,0 @@
-
-// const routes = [
-// 	{
-// 		name: '/',
-// 		component: 
-// 	},
-// ]
