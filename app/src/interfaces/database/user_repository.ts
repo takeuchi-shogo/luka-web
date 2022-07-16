@@ -1,8 +1,8 @@
 
-import User from "src/domain/users"
-import api from "src/infrastructure/api"
+import User from "../../domain/users"
+import api from "../../infrastructure/api"
 
-class UserRepository {
+class user_repository {
 
 	_api: api
 
@@ -45,4 +45,4 @@ class UserRepository {
 }
 
 
-export default UserRepository
+export default user_repository

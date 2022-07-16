@@ -1,10 +1,10 @@
 <script lang="ts">
 
-	// import UserRepository from 'src/interfaces/database/user_repository'
+	import UserRepository from '../../../database/user_repository'
 
 	import Siginin from "../../templates/Siginin.svelte"
 
-	// const _user = new UserRepository
+	const _user = new UserRepository
 
 	let params = {
 		id : '',
