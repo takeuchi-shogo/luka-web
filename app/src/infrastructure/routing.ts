@@ -1,7 +1,7 @@
 
-const routes = [
-	{
-		name: '/',
-		component: 
-	},
-]
+// const routes = [
+// 	{
+// 		name: '/',
+// 		component: 
+// 	},
+// ]

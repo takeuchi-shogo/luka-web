@@ -6,6 +6,6 @@
 </script>
 
 
-<div>
+<div class={ $$props.class }>
 	{ errorMessage }
 </div>

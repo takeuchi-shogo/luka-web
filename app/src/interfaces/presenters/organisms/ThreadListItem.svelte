@@ -53,14 +53,8 @@
 		{ errorMessage }
 	{ /if }
 	{ #each threads as thread }
-		<div>
-			<ThreadHeader bind:title={ thread.title }/>
-		</div>
-		<div>
-			<ThreadContent bind:thread={ thread }/>
-		</div>
-		<div>
-			<ThreadFooter/>
-		</div>
+		<ThreadHeader bind:title={ thread.title }/>
+		<ThreadContent bind:thread={ thread }/>
+		<ThreadFooter/>
 	{ /each }
 </div>

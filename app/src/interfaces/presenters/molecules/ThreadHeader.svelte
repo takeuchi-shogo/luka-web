@@ -7,8 +7,6 @@
 </script>
 
 
-<div>
-	<Title class="">
-		{ title }
-	</Title>
-</div>
+<Title class="">
+	{ title }
+</Title>
