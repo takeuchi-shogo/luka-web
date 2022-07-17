@@ -1,5 +1,7 @@
 <script lang="ts">
 
+	import { onMount } from 'svelte'
+
 	import UserRepository from '../../../database/user_repository'
 
 	import Siginin from "../../templates/Siginin.svelte"
@@ -23,6 +25,15 @@
 	// 		window.location.href = '/home'
 	// 	})
 	// }
+
+	function init() {
+		console.log('signin')
+	}
+
+
+	onMount(() => {
+		init()
+	})
 
 </script>
 
