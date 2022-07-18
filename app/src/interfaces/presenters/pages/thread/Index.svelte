@@ -3,10 +3,10 @@
 	import { onMount } from 'svelte'
 	import { forEach } from 'lodash'
 
-	import CommentRepository from 'src/interfaces/database/comment_repository'
-	import ThreadRepository from 'src/interfaces/database/thread_repository'
+	import CommentRepository from 'interfaces/database/comment_repository'
+	import ThreadRepository from 'interfaces/database/thread_repository'
 	
-	import ThreadList from 'src/interfaces/presenters/templates/ThreadList.svelte'
+	import ThreadList from 'interfaces/presenters/templates/ThreadList.svelte'
 
 	const _thread = new ThreadRepository
 	const _comment = new CommentRepository
@@ -39,7 +39,7 @@
 
 
 	onMount(() => {
-		init()
+		// init()
 	})
 
 </script>

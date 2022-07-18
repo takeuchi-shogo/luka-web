@@ -1,11 +1,12 @@
 <script lang="ts">
 
-	import ThreadListItem from "src/interfaces/presenters/organisms/ThreadListItem.svelte"
+	import ThreadListItem from "interfaces/presenters/organisms/ThreadListItem.svelte"
 
 	export let threads = []
 
 </script>
 
+<div>Thread List Page</div>
 { #each threads as thread }
-	<ThreadListItem bind:thread />
+	<ThreadListItem />
 {/each}

@@ -1,8 +1,8 @@
 
 import { forEach } from 'lodash'
 
-import Thread from 'src/domain/threads'
-import api from 'src/infrastructure/api'
+import Thread from '../../domain/threads'
+import api from '../../infrastructure/api'
 
 
 class ThreadRepository {
@@ -14,7 +14,7 @@ class ThreadRepository {
 	}
 
 
-	get(id: number, callback: (error: any, message: string, data: any) => void) {
+	get(id: string, callback: (error: any, message: string, data: any) => void) {
 		this._api.get('/threads/' + id, null, (error, message, data) => {
 			if (error) {
 				callback(error, message, new Thread(null))

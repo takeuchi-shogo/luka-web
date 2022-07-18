@@ -4,7 +4,7 @@
 
 
 	function init() {
-		console.log('top')
+		// console.log('top')
 	}
 
 	onMount(() => {
@@ -14,4 +14,4 @@
 </script>
 
 
-<h1>Hello World</h1>
+<h1 class="text-indigo-600 text-6xl">This is Top Page</h1>

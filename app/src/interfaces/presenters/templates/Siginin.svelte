@@ -1,12 +1,14 @@
 
 <script lang="ts">
 
-	import SigninForm from "../organisms/SigninForm.svelte"
+	import SigninForm from "interfaces/presenters/organisms/SigninForm.svelte"
 
 
 </script>
 
 
-<SigninForm>
+<div class="flex flex-col items-center justify-center">
+	<SigninForm>
 
-</SigninForm>
+	</SigninForm>
+</div>

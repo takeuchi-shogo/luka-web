@@ -2,9 +2,9 @@
 
 	import { onMount } from 'svelte'
 
-	import UserRepository from '../../../database/user_repository'
+	import UserRepository from 'interfaces/database/user_repository'
 
-	import Siginin from "../../templates/Siginin.svelte"
+	import Siginin from "interfaces/presenters/templates/Siginin.svelte"
 
 	const _user = new UserRepository
 

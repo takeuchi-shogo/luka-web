@@ -1,6 +1,6 @@
 <script lang="ts">
 
-	import ThreadRepository from 'src/interfaces/database/thread_repository'
+	import ThreadRepository from 'interfaces/database/thread_repository'
 
 	const _thread = new ThreadRepository
 

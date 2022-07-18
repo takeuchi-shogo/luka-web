@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type Thread from "src/domain/threads";
+	import type Thread from "domain/threads";
 
 
 	export let thread:Thread

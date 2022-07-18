@@ -8,22 +8,22 @@
 	import ThreadIndex from './interfaces/presenters/pages/thread/Index.svelte'
 	import ThreadSingle from './interfaces/presenters/pages/thread/Single.svelte'
 
-	import TailwindCss from './lib/TailwindCSS.svelte'
+	import './lib/Tailwind.css'
 
 	export let id = 120
 </script>
 
 
-<TailwindCss />
+<!-- <TailwindCss /> -->
 
 <Router>
 	<nav class="navbar w-full bg-white">
-		<Link to="/">top</Link>
-		<Link to="/siginin">siginin</Link>
-		<Link to="/comments/{ id }">comment</Link>
+		<Link class="mr-5 hover:text-gray-900" to="/">top</Link>
+		<Link class="mr-5 hover:text-gray-900" to="/siginin">siginin</Link>
+		<Link class="mr-5 hover:text-gray-900" to="/comments/{ id }">comment</Link>
 		<!-- <Link to="/comments"></Link>  -->
-		<Link to="/threads">Thread</Link>
-		<Link to="/threads/{ id }">Thread Single</Link>
+		<Link class="mr-5 hover:text-gray-900" to="/threads">Thread</Link>
+		<Link class="mr-5 hover:text-gray-900" to="/threads/{ id }">Thread Single</Link>
 	</nav>
 	<main>
 		<Route path="" component={ TopIndex } />

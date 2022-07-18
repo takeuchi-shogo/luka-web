@@ -1,13 +1,12 @@
 
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { init } from "svelte/internal";
 
 	export let id: string = ''
 
 
 	function init() {
-		console.log('comment')
+		// console.log('comment')
 	}
 
 
