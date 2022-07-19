@@ -1,7 +1,7 @@
 
 import axios, { AxiosResponse } from 'axios'
 
-import config from '../infrastructure/config'
+import config from 'infrastructure/config'
 
 class api{
 
