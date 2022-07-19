@@ -10,4 +10,5 @@
 </script>
 
 
+<div>{ thread }</div>
 <ThreadItem bind:title bind:description />
