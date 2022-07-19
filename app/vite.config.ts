@@ -22,4 +22,9 @@ export default defineConfig({
 		host: 'localhost',
 		port: 5000
 	},
+    build: {
+        rollupOptions: {
+            external: ['axios']
+        }
+    }
 })
