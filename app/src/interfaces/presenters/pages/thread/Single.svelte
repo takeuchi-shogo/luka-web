@@ -26,7 +26,7 @@
 
 
 	onMount(() => {
-		init()
+		// init()
 	})
 
 </script>
