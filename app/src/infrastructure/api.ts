@@ -1,5 +1,5 @@
 
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios/index'
 
 import config from 'infrastructure/config'
 

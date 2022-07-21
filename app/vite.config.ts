@@ -5,6 +5,7 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	// root: 'public',
 	plugins: [svelte()],
 	css:{
 		postcss
@@ -23,8 +24,9 @@ export default defineConfig({
 		port: 5000
 	},
 	build: {
-		rollupOptions: {
-			external: ['axios']
-		}
+		// outDir: 'build',
+		// rollupOptions: {
+		// 	external: ['axios']
+		// }
 	}
 })

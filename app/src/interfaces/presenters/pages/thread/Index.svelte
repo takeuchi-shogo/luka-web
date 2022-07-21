@@ -14,7 +14,7 @@
 	let threads = []
 	let comments = []
 
-	let errorMessage: string = ''
+	let errorMessage = ''
 
 
 	function init() {
@@ -39,10 +39,10 @@
 
 
 	onMount(() => {
-		// init()
+		init()
 	})
 
 </script>
 
-
+{ errorMessage }
 <ThreadList bind:threads/>

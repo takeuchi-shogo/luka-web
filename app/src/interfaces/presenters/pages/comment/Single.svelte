@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	export let id: string = ''
+	export let id = ''
 
 
 	function init() {

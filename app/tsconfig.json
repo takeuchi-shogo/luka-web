@@ -8,6 +8,7 @@
     "baseUrl": "src",
     "types": [
       "node",
+      "vite/client",
     ],
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.
@@ -17,7 +18,8 @@
      */
     "allowJs": true,
     "checkJs": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte, src/**/*.css"],
   "references": [{ "path": "./tsconfig.node.json" }]
