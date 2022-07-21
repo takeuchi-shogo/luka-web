@@ -10,21 +10,21 @@ export default defineConfig({
 		postcss
 	},
 	resolve: {
-	  alias: {
-        'domain': path.resolve('src/domain'),
-        'infrastructure': path.resolve('src/infrastructure'),
-	    'interfaces': path.resolve('src/interfaces'),
-        'lib': path.resolve('src/lib')
-        // 'usecase': path.resolve('src/usecase')
+		alias: {
+		'domain': path.resolve('src/domain'),
+		'infrastructure': path.resolve('src/infrastructure'),
+		'interfaces': path.resolve('src/interfaces'),
+		'lib': path.resolve('src/lib')
+		// 'usecase': path.resolve('src/usecase')
 	  }
 	},
-    server: {
+	server: {
 		host: 'localhost',
 		port: 5000
 	},
-    build: {
-        rollupOptions: {
-            external: ['axios']
-        }
-    }
+	build: {
+		rollupOptions: {
+			external: ['axios']
+		}
+	}
 })
