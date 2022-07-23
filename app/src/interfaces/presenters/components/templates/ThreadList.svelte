@@ -1,6 +1,6 @@
 <script lang="ts">
 
-	import ThreadListItem from "interfaces/presenters/organisms/ThreadListItem.svelte"
+	import ThreadListItem from "interfaces/presenters/components/organisms/ThreadListItem.svelte"
 
 	export let threads = []
 

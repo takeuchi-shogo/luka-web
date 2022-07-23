@@ -1,20 +1,33 @@
 
 <script lang="ts">
 
-	import Button from "interfaces/presenters/atoms/Button.svelte"
-	import SigininForm from "interfaces/presenters/molecules/SigininForm.svelte"
+	import { createEventDispatcher } from 'svelte'
+
+	import Button from "interfaces/presenters/components/atoms/Button.svelte"
+	import SigininForm from "interfaces/presenters/components/molecules/SigininForm.svelte"
+
+	const _dispatch = createEventDispatcher()
 
 	let label = {
 		email: 'Email',
 		password: 'Password',
 	}
 
+	let types = {
+		email: 'email',
+		password: 'password',
+	}
+
 	let params = {
 		email: '',
 		password: '',
 	}
-	
 
+
+	function signin() {
+		_dispatch('signin', {params: params})
+	}
+	
 </script>
 
 <form class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
@@ -48,7 +61,7 @@
 		<p class="text-base font-medium leading-4 px-2.5 text-gray-400">OR</p>
 		<hr class="w-full bg-gray-400">
 	</div>
-	<SigininForm bind:label={ label.email } bind:value={ params.email }/>
-	<SigininForm bind:label={ label.password } bind:value={ params.password }/>
-	<Button text={ 'Sign in' } />
+	<SigininForm type={ types.email } bind:label={ label.email } bind:value={ params.email }/>
+	<SigininForm type={ types.password } bind:label={ label.password } bind:value={ params.password }/>
+	<Button text={ 'Sign in' } on:onClick={ signin }/>
 </form>

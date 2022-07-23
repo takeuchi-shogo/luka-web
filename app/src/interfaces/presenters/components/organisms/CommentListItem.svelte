@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Content from "../molecules/Content.svelte";
+	import Content from "interfaces/presenters/components/molecules/Content.svelte";
 
 
 	export let comments = []

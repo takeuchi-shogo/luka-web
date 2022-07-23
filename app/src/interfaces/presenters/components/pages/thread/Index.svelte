@@ -6,7 +6,7 @@
 	import CommentRepository from 'interfaces/database/comment_repository'
 	import ThreadRepository from 'interfaces/database/thread_repository'
 	
-	import ThreadList from 'interfaces/presenters/templates/ThreadList.svelte'
+	import ThreadList from 'interfaces/presenters/components/templates/ThreadList.svelte'
 
 	const _thread = new ThreadRepository
 	const _comment = new CommentRepository

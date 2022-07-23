@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-	import ThreadItem from 'interfaces/presenters/organisms/ThreadItem.svelte'
+	import ThreadItem from 'interfaces/presenters/components/organisms/ThreadItem.svelte'
 
 	export let thread = {}
 	let title:string = ''
