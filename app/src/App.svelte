@@ -2,6 +2,7 @@
 
 	import { Router, Link, Route } from 'svelte-routing'
 
+	import Logo from 'interfaces/presenters/components/atoms/Logo.svelte'
 	import CommentSingle from './interfaces/presenters/components/pages/comment/Single.svelte'
 	import TopIndex from './interfaces/presenters/components/pages/top/Index.svelte'
 	import SigininIndex from './interfaces/presenters/components/pages/signin/Index.svelte'
@@ -18,15 +19,36 @@
 
 <Router>
 	<!-- Header.svelte -->
-	<nav class="navbar w-full bg-white">
-		<Link class="mr-5 hover:text-gray-900" to="/">top</Link>
-		<Link class="mr-5 hover:text-gray-900" to="/siginin">siginin</Link>
-		<Link class="mr-5 hover:text-gray-900" to="/comments/{ id }">comment</Link>
-		<!-- <Link to="/comments"></Link>  -->
-		<Link class="mr-5 hover:text-gray-900" to="/threads">Thread</Link>
-		<Link class="mr-5 hover:text-gray-900" to="/threads/{ id }">Thread Single</Link>
-	</nav>
-	<main>
+	<header class="bg-indigo-500">
+		<nav class="md:flex navbar w-full flex justify-between">
+			<ul class="md:flex text-lime-100 font-light py-4 text-base">
+				<li>
+					<Logo/>
+				</li>
+			</ul>
+			<ul class="md:flex text-lime-100 font-light py-4 text-base">
+				<li>
+					<Link class="mr-5 hover:text-gray-400" to="/">top</Link>
+				</li>
+				<li>
+					<Link class="mr-5 hover:text-gray-400" to="/comments/{ id }">comment</Link>
+				</li>
+				<li>
+					<Link class="mr-5 hover:text-gray-400" to="/threads">Thread</Link>
+				</li>
+				<li>
+					<Link class="mr-5 hover:text-gray-400" to="/threads/{ id }">Thread Single</Link>
+				</li>
+			</ul>
+			<ul class="md:flex text-lime-100 text-xl font-light py-4 text-base">
+				<li>
+					<Link class="mr-5 hover:text-gray-400" to="/siginin">siginin</Link>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="mx-auto">
 		<Route path="" component={ TopIndex } />
 
 		<Route path="/siginin">

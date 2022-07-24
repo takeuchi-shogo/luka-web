@@ -13,5 +13,6 @@
 
 </script>
 
-
-<h1 class="text-indigo-600 text-6xl">This is Top Page</h1>
+<div class="content-center">
+	<h1 class="text-center text-indigo-600 text-6xl">This is Top Page</h1>
+</div>
