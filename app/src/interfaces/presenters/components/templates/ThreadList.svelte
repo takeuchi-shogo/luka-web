@@ -7,8 +7,12 @@
 </script>
 
 
-<div class="sm:container px-4">
-	<h1>Thread List Page</h1>
+<div class="flex flex-col flex-grow">
+	<div class="py-4">
+		<h1 class="text-xl font-bold">
+			Thread List Page
+		</h1>
+	</div>
 	<!-- { #each threads as thread } -->
 		<ThreadListItem />
 	<!-- {/each} -->

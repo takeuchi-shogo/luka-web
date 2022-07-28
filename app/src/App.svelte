@@ -3,16 +3,21 @@
 	import { Router, Link, Route } from 'svelte-routing'
 
 	import Logo from 'interfaces/presenters/components/atoms/Logo.svelte'
-	import CommentSingle from './interfaces/presenters/components/pages/comment/Single.svelte'
-	import TopIndex from './interfaces/presenters/components/pages/top/Index.svelte'
-	import SigninIndex from './interfaces/presenters/components/pages/signin/Index.svelte'
-	import SignupIndex from './interfaces/presenters/components/pages/signup/Index.svelte'
-	import ThreadIndex from './interfaces/presenters/components/pages/thread/Index.svelte'
-	import ThreadSingle from './interfaces/presenters/components/pages/thread/Single.svelte'
+	import CommentSingle from './interfaces/presenters/pages/comment/Single.svelte'
+	import TopIndex from './interfaces/presenters/pages/top/Index.svelte'
+	import SigninIndex from './interfaces/presenters/pages/signin/Index.svelte'
+	import SignupIndex from './interfaces/presenters/pages/signup/Index.svelte'
+	import ThreadIndex from './interfaces/presenters/pages/thread/Index.svelte'
+	import ThreadSingle from './interfaces/presenters/pages/thread/Single.svelte'
+
+	import Index from './interfaces/presenters/index/Index.svelte'
+	import Dashboard from './interfaces/presenters/dashboard/Index.svelte'
 
 	import './lib/Tailwind.css'
 
 	export let id = 120
+
+	let me = false
 </script>
 
 
@@ -20,7 +25,7 @@
 
 <Router>
 	<!-- Header.svelte -->
-	<header class="bg-indigo-500">
+	<!-- <header class="bg-indigo-500">
 		<nav class="md:flex navbar w-full flex justify-between px-4">
 			<ul class="md:flex text-lime-100 font-light py-4 text-base">
 				<li>
@@ -76,6 +81,11 @@
 
 		<Route path="/threads/:id" let:params>
 			<ThreadSingle id={ params.id } />
-		</Route>
-	</main>
+		</Route> -->
+		{ #if me }
+			<Index />
+		{ :else }
+			<Dashboard />
+		{ /if }
+	<!-- </main> -->
 </Router>
