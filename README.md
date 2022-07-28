@@ -1,6 +1,7 @@
 # Svelte + Vite + TypeScript + Tailwind.css を使用したサンプルです。
 
-Atomic Design + clean architectureに可能な限り乗っ取って書いていきたいです。
+Atomic Design + clean architectureに可能な限り沿って書いていきたいですが、不備もあるかと思います。
+実装しきれなかった場合は今後改善していきます。
 
 # 追加する機能（現在実装中）
 ・アカウント新規作成
@@ -17,5 +18,5 @@ Atomic Design + clean architectureに可能な限り乗っ取って書いてい�
 課金周り
 
 # 予定しているインフラ環境
-Dokcer採用
-AWS採用
+Dokcer採用 → 完了
+AWS採用 → 表示できた。外観がある程度完成すると公開予定です。（8月末までに）

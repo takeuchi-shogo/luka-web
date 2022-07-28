@@ -5,7 +5,8 @@
 	import Logo from 'interfaces/presenters/components/atoms/Logo.svelte'
 	import CommentSingle from './interfaces/presenters/components/pages/comment/Single.svelte'
 	import TopIndex from './interfaces/presenters/components/pages/top/Index.svelte'
-	import SigininIndex from './interfaces/presenters/components/pages/signin/Index.svelte'
+	import SigninIndex from './interfaces/presenters/components/pages/signin/Index.svelte'
+	import SignupIndex from './interfaces/presenters/components/pages/signup/Index.svelte'
 	import ThreadIndex from './interfaces/presenters/components/pages/thread/Index.svelte'
 	import ThreadSingle from './interfaces/presenters/components/pages/thread/Single.svelte'
 
@@ -20,7 +21,7 @@
 <Router>
 	<!-- Header.svelte -->
 	<header class="bg-indigo-500">
-		<nav class="md:flex navbar w-full flex justify-between">
+		<nav class="md:flex navbar w-full flex justify-between px-4">
 			<ul class="md:flex text-lime-100 font-light py-4 text-base">
 				<li>
 					<Logo/>
@@ -42,7 +43,10 @@
 			</ul>
 			<ul class="md:flex text-lime-100 text-xl font-light py-4 text-base">
 				<li>
-					<Link class="mr-5 hover:text-gray-400" to="/siginin">siginin</Link>
+					<Link class="mr-5 hover:text-gray-400" to="/signup">sign up</Link>
+				</li>
+				<li>
+					<Link class="mr-5 hover:text-gray-400" to="/signin">sign in</Link>
 				</li>
 			</ul>
 		</nav>
@@ -51,8 +55,12 @@
 	<main class="mx-auto">
 		<Route path="" component={ TopIndex } />
 
-		<Route path="/siginin">
-			<SigininIndex />
+		<Route path="/signin">
+			<SigninIndex />
+		</Route>
+
+		<Route path="/signup">
+			<SignupIndex />
 		</Route>
 
 		<Route path="/comments/:id" let:params>

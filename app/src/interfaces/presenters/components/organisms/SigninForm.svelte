@@ -4,7 +4,7 @@
 	import { createEventDispatcher } from 'svelte'
 
 	import Button from "interfaces/presenters/components/atoms/Button.svelte"
-	import SigininForm from "interfaces/presenters/components/molecules/SigininForm.svelte"
+	import FormInput from "interfaces/presenters/components/molecules/FormInput.svelte"
 
 	const _dispatch = createEventDispatcher()
 
@@ -25,7 +25,7 @@
 
 
 	function signin() {
-		_dispatch('signin', {params: params})
+		_dispatch('signin', { params: params })
 	}
 	
 </script>
@@ -61,7 +61,9 @@
 		<p class="text-base font-medium leading-4 px-2.5 text-gray-400">OR</p>
 		<hr class="w-full bg-gray-400">
 	</div>
-	<SigininForm type={ types.email } bind:label={ label.email } bind:value={ params.email }/>
-	<SigininForm type={ types.password } bind:label={ label.password } bind:value={ params.password }/>
+	<div class="mb-10">
+		<FormInput type={ types.email } bind:label={ label.email } bind:value={ params.email }/>
+		<FormInput type={ types.password } bind:label={ label.password } bind:value={ params.password }/>
+	</div>
 	<Button text={ 'Sign in' } on:onClick={ signin }/>
 </form>

@@ -6,7 +6,10 @@
 
 </script>
 
-<div>Thread List Page</div>
-{ #each threads as thread }
-	<ThreadListItem />
-{/each}
+
+<div class="sm:container px-4">
+	<h1>Thread List Page</h1>
+	<!-- { #each threads as thread } -->
+		<ThreadListItem />
+	<!-- {/each} -->
+</div>
