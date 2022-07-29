@@ -82,7 +82,7 @@
 		<Route path="/threads/:id" let:params>
 			<ThreadSingle id={ params.id } />
 		</Route> -->
-		{ #if me }
+		{ #if !me }
 			<Index />
 		{ :else }
 			<Dashboard />
