@@ -14,5 +14,5 @@
 </script>
 
 <div class="content-center">
-	<h1 class="text-center text-indigo-600 text-6xl">This is Top Page</h1>
+	<img class="w-full" src="src/assets/luka_top.jpeg" alt="luka_top">
 </div>

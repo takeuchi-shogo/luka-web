@@ -14,14 +14,14 @@
 
 <div class="relative w-full mb-5">
 	<label
-	  class="block uppercase text-gray-700 text-xs font-bold mb-2"
+	  class="block uppercase text-gray-600 text-xs font-bold mb-2"
 	  for="grid-password"
   >
 	  { label }
   </label>
   <input
 	  use:typeAction
-	  class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+	  class="border-0 px-3 py-3 placeholder-gray-400 text-gray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
 	  placeholder={ placeholder }
 	  style="transition: all 0.15s ease 0s;"
 	  bind:value={ value }

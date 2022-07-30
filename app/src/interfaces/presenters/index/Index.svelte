@@ -1,9 +1,13 @@
 
 <script lang="ts">
 
-	import TopIndex from 'interfaces/presenters/components/pages/top/Index.svelte'
+	import Header from 'interfaces/presenters/components/organisms/Header.svelte'
+	import Route from 'interfaces/presenters/Route.svelte'
+	import Footer from 'interfaces/presenters/components/organisms/Footer.svelte'
 
 </script>
 
 
-<TopIndex />
+<Header />
+<Route />
+<Footer />
