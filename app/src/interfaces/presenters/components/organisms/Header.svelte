@@ -4,8 +4,6 @@
 
 	import Logo from 'interfaces/presenters/components/atoms/Logo.svelte'
 
-	export let id = 100
-
 </script>
 
 

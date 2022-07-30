@@ -41,7 +41,7 @@
 			</li>
 			<li>
 				<div class="p-3">
-					<Link to="/auther">その他</Link>
+					<Link to="/others">その他</Link>
 				</div>
 			</li>
 		</ul>
