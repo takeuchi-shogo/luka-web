@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte'
 
 	import ThreadRepository from 'interfaces/database/thread_repository'
+	import ThreadSingle from 'interfaces/presenters/components/templates/ThreadSingle.svelte'
 
 	const _thread = new ThreadRepository
 
@@ -32,5 +33,4 @@
 </script>
 
 
-<div>Thread Single</div>
-<div>ID: { id }</div>
+<ThreadSingle />

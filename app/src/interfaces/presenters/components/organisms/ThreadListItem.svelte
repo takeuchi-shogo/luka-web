@@ -12,7 +12,7 @@
 </script>
 
 
-<div class="pt-8 sm:flex lg:items-end group">
+<div class="pt-8 sm:flex group">
 	<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
 		<img class="w-full rounded-md h-32 lg:w-32 object-cover" src="src/assets/BotIcon.jpeg" alt="sample icon">
 	</div>
@@ -40,7 +40,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <ThreadHeader bind:title={ thread.title }/>
-<ThreadContent bind:thread={ thread }/>
-<ThreadFooter/> -->

@@ -26,7 +26,7 @@
 </script>
 
 
-<main class="mx-auto">
+<main>
 	<!-- before signin -->
 	<Route path="" component={ TopIndex } />
 

@@ -30,7 +30,7 @@
 			class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
 			on:click={ isOpen }
 		>
-			Modal Open
+			投稿する
 		</button>
 	</div>
 </div>
@@ -40,7 +40,7 @@
 	<div class="flex items-center justify-center fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-full bg-gray-200 bg-opacity-75" transition:fade={{ duration: 150 }}>
 		<div class="relative p-4 w-full max-w-2xl h-full">
 			<div class="relative bg-white rounded-lg shadow">
-				<div class="flex justify-between items-start p-4 rounded-t border-b">
+				<div class="flex justify-between items-start px-6 py-4 rounded-t border-b">
 					<h3 class="text-xl font-semibold text-gray-500">
 						投稿
 					</h3>
@@ -65,7 +65,7 @@
 					</label>
 					<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ discription } placeholder="投稿内容を入力してください"></textarea>
 				</div>
-				<div class="p-4 flex justify-between">
+				<div class="p-6 flex justify-between">
 					<button
 						class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
 						on:click={ post }
