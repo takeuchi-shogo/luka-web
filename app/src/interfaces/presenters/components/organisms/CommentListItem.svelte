@@ -17,6 +17,7 @@
 		console.log('post')
 	}
 
+
 	function isOpen() {
 		isModalOpen = !isModalOpen
 	}
