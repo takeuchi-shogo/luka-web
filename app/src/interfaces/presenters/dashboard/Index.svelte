@@ -7,7 +7,7 @@
 
 
 <div class="flex w-screen justify-center h-screen px-4">
-	<div class="flex w-full max-w-screen-lg">
+	<div class="flex md:flex-col-2 w-full max-w-screen-lg">
 		<Sidebar />
 		<Route />
 	</div>
