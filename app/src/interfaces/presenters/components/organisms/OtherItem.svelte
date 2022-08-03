@@ -7,8 +7,11 @@
 	import Setting from 'interfaces/presenters/components/organisms/otherMenu/Setting.svelte'
 
 	import PasswordItem from 'interfaces/presenters/components/organisms/otherItem/Password.svelte'
+	import AccountEdit from 'interfaces/presenters/components/organisms/otherItem/AccountEdit.svelte'
+	import Deactivate from 'interfaces/presenters/components/organisms/otherItem/Deactivate.svelte'
 
 
+	export let me = null
 	export let category = ''
 
 </script>
@@ -19,10 +22,14 @@
 	<!-- { #if category == '' } -->
 	{ #if category == 'accounts' }
 		<Account />
+	{ :else if category == 'account_edit' }
+		<AccountEdit me={ me } />
+	{ :else if category == 'deactivate' }
+		<Deactivate me={ me } />
 	{ :else if category == 'security' }
 		<Security />
 	{ :else if category == 'password'}
-		<PasswordItem />
+		<PasswordItem me={ me } />
 	{ :else if category == 'privacy' }
 		<Privacy />
 	{ :else if category == 'notifications' }

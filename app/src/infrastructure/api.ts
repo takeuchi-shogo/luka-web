@@ -1,9 +1,10 @@
 
 import axios, { AxiosResponse } from 'axios/index'
+import cookie from 'js-cookie'
 
 import config from 'infrastructure/config'
 
-class api{
+class Api{
 
 	_config: config
 
@@ -49,7 +50,7 @@ class api{
 	}
 
 
-	post(endpoint: string, params: Object, callback: (error: any, message: string, data: Object) => void) {
+	post(endpoint: string, params: Object, callback: (error: any, message: string, data: any) => void) {
 
 		let sendParams = (params == null) ? {} : params
 		const formData = new FormData()
@@ -129,7 +130,20 @@ class api{
 
 	_refreshToken(callback: (error: any, message: string) => void) {
 
+		const refreshToken = (cookie.get('refreshToken')) ? cookie.get('refreshToken') : ''
+
+		this.post('/token/refresh', { refreshToken: cookie.get('refreshToken') }, (error, message, data) => {
+			if (error) {
+				callback(error, message)
+				return
+			}
+			// set cookie
+			cookie.set('token', data.token)
+			cookie.set('tokenExpireAt', data.tokenExpireAt)
+			cookie.set('refreshToken', data.refreshToken)
+			cookie.set('refreshTokenExpireAt', data.refreshTokenExpireAt)
+		})
 	}
 }
 
-export default api
+export default Api

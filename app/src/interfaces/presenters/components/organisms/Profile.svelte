@@ -1,6 +1,11 @@
 <script lang="ts">
 
+	import { onMount } from 'svelte'
+	import { forEach } from 'lodash'
+
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
+
+	export let me = null
 
 	let types = {
 		text: 'text',
@@ -37,6 +42,21 @@
 		gender: '',
 		prefecture: '',
 	}
+
+
+	function init() {
+		if (me) {
+			forEach(me, (_value, key) => {
+				if (params.hasOwnProperty(key)) {
+					params[key] = me[key]
+				}
+			})
+		}
+	}
+
+	onMount(() => {
+		init()
+	})
 
 </script>
 
