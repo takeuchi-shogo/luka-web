@@ -4,7 +4,9 @@
 	import { Route } from 'svelte-routing'
 
 	import CommentSingle from 'interfaces/presenters/pages/comment/Single.svelte'
-	import CommingSoon from 'interfaces/presenters/pages/CommingSoon.svelte';
+	import CommingSoon from 'interfaces/presenters/pages/CommingSoon.svelte'
+	import OtherIndex from 'interfaces/presenters/pages/other/Index.svelte'
+	import ProfileIndex from 'interfaces/presenters/pages/profile/Index.svelte'
 	import TopIndex from 'interfaces/presenters/pages/top/Index.svelte'
 	import SigninIndex from 'interfaces/presenters/pages/signin/Index.svelte'
 	import SignupIndex from 'interfaces/presenters/pages/signup/Index.svelte'
@@ -26,7 +28,7 @@
 </script>
 
 
-<main>
+<main class="flex flex-col flex-1">
 	<!-- before signin -->
 	<Route path="" component={ TopIndex } />
 
@@ -69,11 +71,15 @@
 	</Route>
 
 	<Route path="/others">
-		<CommingSoon />
+		<OtherIndex />
+	</Route>
+
+	<Route path="/others/:category" let:params>
+		<OtherIndex category={ params.category } />
 	</Route>
 
 	<Route path="/profile">
-		<CommingSoon />
+		<ProfileIndex />
 	</Route>
 
 	<Route path="/search">

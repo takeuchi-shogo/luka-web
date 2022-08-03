@@ -1,8 +1,8 @@
 
 import { forEach } from 'lodash'
 
-import Thread from '../../domain/threads'
-import api from '../../infrastructure/api'
+import Thread from 'domain/threads'
+import api from 'infrastructure/api'
 
 
 class ThreadRepository {
