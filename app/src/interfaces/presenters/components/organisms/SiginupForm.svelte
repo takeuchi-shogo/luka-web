@@ -1,8 +1,11 @@
 <script lang="ts">
+
+	import { createEventDispatcher } from 'svelte'
 	
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
-	import Button from 'interfaces/presenters/components/atoms/Button.svelte'
+	import Button from 'interfaces/presenters/components/atoms/button/Button.svelte'
 
+	const _dispatch = createEventDispatcher()
 
 	let types = {
 		text: 'text',
@@ -43,6 +46,7 @@
 	
 	function signup() {
 		console.log('新規作成', params)
+		_dispatch('signup', params)
 	}
 
 </script>

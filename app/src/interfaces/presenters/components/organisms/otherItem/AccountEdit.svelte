@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-	import Button from 'interfaces/presenters/components/atoms/Button.svelte'
+	import Button from 'interfaces/presenters/components/atoms/button/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 
 	export let me = null
@@ -39,6 +39,11 @@
 				<FormInput type={ types.text } label={ labels.screenName } placeholder={ placeholders.screenName } value={ params.screenName } />
 				<Button text={ '保存' }/>
 			</form>
+		</div>
+		<div>
+			<div>
+				<Button text={ 'ログアウト' } />
+			</div>
 		</div>
 	</div>
 </div>

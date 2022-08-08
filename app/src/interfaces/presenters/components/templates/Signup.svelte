@@ -1,7 +1,14 @@
 <script lang="ts">
 
+	import { createEventDispatcher } from 'svelte'
+
 	import SiginupForm from 'interfaces/presenters/components/organisms/SiginupForm.svelte'
 
+	const _dispatch = createEventDispatcher()
+
+	function signup(e) {
+		_dispatch('signup', e.detail.params)
+	}
 
 </script>
 
@@ -11,6 +18,6 @@
 		<h1 class="font-bold">アカウント新規作成</h1>
 	</div>
 	<div class="mb-6 lg:w-1/2 w-full">
-		<SiginupForm />
+		<SiginupForm on:signup={ signup } />
 	</div>
 </div>

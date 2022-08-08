@@ -24,7 +24,7 @@ class me_repository {
 	}
 
 
-	create(user: User, callback: (error: any, message: string, data: User) => void) {
+	create(user: Object, callback: (error: any, message: string, data: User) => void) {
 		this._api.post('/me', user, (error, message, data) => {
 			if (error) {
 				callback(error, message, new User(null))
@@ -35,7 +35,7 @@ class me_repository {
 	}
 
 
-	save(user: User, callback: (error: any, message: string, data: any) => void) {
+	save(user: Object, callback: (error: any, message: string, data: any) => void) {
 		this._api.patch('/me', user, (error, message, data) => {
 			if (error) {
 				callback(error, message, new User(null))
@@ -58,6 +58,15 @@ class me_repository {
 			cookie.set('refreshToken', data.refreshToken)
 			cookie.set('refreshTokenExpireAt', data.refreshTokenExpireAt)
 		})
+	}
+
+	
+	signout(callback) {
+		cookie.remove('token')
+		cookie.remove('tokenExpireAt')
+		cookie.remove('refreshToken')
+		cookie.remove('refreshTokenExpireAt')
+		callback(null, 'success')
 	}
 }
 

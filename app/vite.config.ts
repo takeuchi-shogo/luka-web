@@ -21,7 +21,7 @@ export default defineConfig({
 	},
 	server: {
 		host: 'localhost',
-		port: 5000
+		port: 3000
 	},
 	// build: {
 		// outDir: 'build',
