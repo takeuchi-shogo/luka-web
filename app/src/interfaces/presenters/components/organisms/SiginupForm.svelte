@@ -45,8 +45,7 @@
 
 	
 	function signup() {
-		console.log('新規作成', params)
-		_dispatch('signup', params)
+		_dispatch('signup', {params: params})
 	}
 
 </script>

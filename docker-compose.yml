@@ -9,5 +9,16 @@ services:
       - ./app:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     container_name: luka-web
-    ports:
-            - "3000:80"
+    # ports:
+    #         - "3000:80"
+    networks:
+      - luka-network
+      - luka-web-network
+    environment:
+      - VIRTUAL_HOST=luka.lv
+
+networks:
+  luka-network:
+    name: luka_network
+  luka-web-network:
+    name: luka_web_network

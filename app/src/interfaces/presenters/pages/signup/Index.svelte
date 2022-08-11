@@ -1,6 +1,4 @@
 <script lang="ts">
-import User from 'domain/users';
-
 
 	import MeRepository from 'interfaces/database/me_repository'
 	import Signup from 'interfaces/presenters/components/templates/Signup.svelte'
@@ -13,7 +11,8 @@ import User from 'domain/users';
 
 
 	function signup(e) {
-		_me.create(e.detail.params, (error, message, data) => {
+		console.log(e.detail)
+		_me.create(e.detail, (error, message, data) => {
 			if (error) {
 				errorMessage = message
 				return
@@ -24,5 +23,5 @@ import User from 'domain/users';
 
 </script>
 
-
+{ errorMessage }
 <Signup on:signup={ signup } />

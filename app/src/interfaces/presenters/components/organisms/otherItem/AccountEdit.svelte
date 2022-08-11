@@ -42,7 +42,7 @@
 		</div>
 		<div>
 			<div>
-				<Button text={ 'ログアウト' } />
+				<span>ログアウト</span>
 			</div>
 		</div>
 	</div>
