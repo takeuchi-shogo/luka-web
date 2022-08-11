@@ -1,4 +1,5 @@
-export default {
+module.exports = {
+  mode: "jit",
   plugins: [],
   theme: {
     extend: {},
