@@ -1,8 +1,9 @@
 
-import axios, { AxiosResponse } from 'axios/index'
+import axios, { AxiosResponse } from 'axios'
 import cookie from 'js-cookie'
 
 import config from 'infrastructure/config'
+import { forEach } from 'lodash'
 
 class Api{
 
@@ -14,7 +15,11 @@ class Api{
 
 	
 	get(endpoint: string, params: Object, callback: (error: any, message: string, data: any) => void) {
-		let sendParams : Object = (params == null) ? {} : params
+		let sendParams : any = (params == null) ? {} : params
+
+		if (cookie.get('token')) {
+			sendParams.accessToken = cookie.get('token')
+		}
 
 		axios({
 			method: 'get',
@@ -55,16 +60,33 @@ class Api{
 		let sendParams = (params == null) ? {} : params
 		const formData = new FormData()
 
+		if (cookie.get('token')) {
+			// キーと値の組の追加
+			formData.append('accessToken', cookie.get('token'))
+		}
+
+		forEach(sendParams, (value, key) => {
+			if (Array.isArray(value)) {
+				forEach(value, (v, _) => {
+					formData.append(key + '[]', v)
+				})
+			} else {
+				formData.append(key, value)
+			}
+		})
+
 		axios({
 			method: 'post',
 			baseURL: this._config.url.api,
 			url: endpoint,
 			data: formData,
 		})
-			.then((response: AxiosResponse) => {
-				callback(null, response.data.result, response.data.data)
+			.then((res) => {
+				console.log("data1", res)
+				callback(null, res.data.result, res.data.data)
 			})
 			.catch((error) => {
+				console.log("res", error.response)
 				if (error.response) {
 					if (error.response.status == 406) {
 						this._refreshToken((err, message) => {
@@ -93,6 +115,21 @@ class Api{
 
 		let sendParams = (params == null) ? {} : params
 		const formData = new FormData()
+
+		if (cookie.get('token')) {
+			// キーと値の組の追加
+			formData.append('accessToken', cookie.get('token'))
+		}
+
+		forEach(sendParams, (value, key) => {
+			if (Array.isArray(value)) {
+				forEach(value, (v, _) => {
+					formData.append(key + '[]', v)
+				})
+			} else {
+				formData.append(key, value)
+			}
+		})
 
 		axios({
 			method: 'post',
@@ -133,15 +170,14 @@ class Api{
 		const refreshToken = (cookie.get('refreshToken')) ? cookie.get('refreshToken') : ''
 
 		this.post('/token/refresh', { refreshToken: cookie.get('refreshToken') }, (error, message, data) => {
-			if (error) {
-				callback(error, message)
-				return
+			if (!error) {
+				// set cookie
+				cookie.set('token', data.token)
+				cookie.set('tokenExpireAt', data.tokenExpireAt)
+				cookie.set('refreshToken', data.refreshToken)
+				cookie.set('refreshTokenExpireAt', data.refreshTokenExpireAt)
 			}
-			// set cookie
-			cookie.set('token', data.token)
-			cookie.set('tokenExpireAt', data.tokenExpireAt)
-			cookie.set('refreshToken', data.refreshToken)
-			cookie.set('refreshTokenExpireAt', data.refreshTokenExpireAt)
+			callback(error, message)
 		})
 	}
 }

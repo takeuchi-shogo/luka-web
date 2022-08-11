@@ -18,10 +18,10 @@ import { onMount } from 'svelte'
 
 
 	function initialize() {
-		_me.get((error, _message, data) => {
+		_me.get((error, message, data) => {
 			if (error) {
 				// initialized = false
-				window.location.href = '/'
+				window.location.href = '/signin'
 				return
 			}
 			me = data
@@ -39,9 +39,9 @@ import { onMount } from 'svelte'
 <!-- <TailwindCss /> -->
 
 <Router>
-	{ #if initialized }
+	{ #if !initialized }
 		<Index />
 	{ :else }
-		<Dashboard />
+		<Dashboard me={ me }/>
 	{ /if }
 </Router>

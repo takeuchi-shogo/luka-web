@@ -9,15 +9,25 @@
 
 	let errorMessage: string = ''
 
+	let siginParams = {
+		screenName: '',
+		password: '',
+	}
+
 
 	function signup(e) {
-		console.log(e.detail)
-		_me.create(e.detail, (error, message, data) => {
+		_me.create(e.detail, (error, message, _data) => {
 			if (error) {
 				errorMessage = message
 				return
 			}
-			me = data
+			_me.signin({ screenName: e.detail.screenName, password: e.detail.password}, (error, message, data) => {
+				if (error) {
+					errorMessage = message
+					return
+				}
+				window.location.href = '/threads'
+			})
 		})
 	}
 

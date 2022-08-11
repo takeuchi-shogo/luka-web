@@ -4,7 +4,7 @@
 
 
 	function init() {
-		// console.log('top')
+		console.log('top')
 	}
 
 	onMount(() => {
@@ -14,5 +14,5 @@
 </script>
 
 <div class="content-center">
-	<img class="w-full" src="src/assets/luka_top.jpeg" alt="luka_top">
+	<img class="w-full" src="./public/img/luka_top.jpeg" alt="luka_top">
 </div>

@@ -3,6 +3,10 @@
 	import Sidebar from 'interfaces/presenters/components/organisms/Sidebar.svelte'
 	import Route from 'interfaces/presenters/Route.svelte'
 
+	export let me = null
+
+
+
 </script>
 
 

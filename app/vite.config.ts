@@ -19,10 +19,10 @@ export default defineConfig({
 		// 'usecase': path.resolve('src/usecase')
 	  }
 	},
-	server: {
-		host: 'localhost',
-		port: 3000
-	},
+	// server: {
+	// 	host: 'localhost',
+	// 	port: 3000
+	// },
 	// build: {
 		// outDir: 'build',
 		// rollupOptions: {

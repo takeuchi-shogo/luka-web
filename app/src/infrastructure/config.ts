@@ -8,8 +8,8 @@ class Config
 
 	constructor() {
 		this.url = {
-			api: "http://localhost:8080/v1/product",
-			web: "http://localhost:3000",
+			api: "http://api.luka.lv/v1/product",
+			web: "http://luka.lv",
 		}
 	}
 }

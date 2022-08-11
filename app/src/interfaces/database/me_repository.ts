@@ -52,6 +52,7 @@ class me_repository {
 				callback(error, message, null)
 				return
 			}
+			console.log('data2', data)
 			// set cookie
 			cookie.set('token', data.token)
 			cookie.set('tokenExpireAt', data.tokenExpireAt)
