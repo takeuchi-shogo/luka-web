@@ -25,7 +25,6 @@
 				return
 			}
 			me = data
-			console.log('app.svelte',me)
 			initialized = true
 		})
 	}
@@ -40,7 +39,7 @@
 <!-- <TailwindCss /> -->
 
 <Router>
-	{ #if !initialized }
+	{ #if initialized }
 		<Index />
 	{ :else }
 		<Dashboard bind:me={ me }/>

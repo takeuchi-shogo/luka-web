@@ -17,7 +17,7 @@
 </script>
 
 
-<div class="w-full px-6">
+<div class="md:w-600 px-6">
 	{ category }
 	<!-- { #if category == '' } -->
 	{ #if category == 'accounts' }

@@ -4,6 +4,7 @@
 	import { forEach } from 'lodash'
 
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
+import FormSelect from '../molecules/FormSelect.svelte';
 
 	export let me = null
 
@@ -43,6 +44,12 @@
 		prefecture: '',
 	}
 
+	let ages = [
+		{ id: 1, text: '男性' },
+		{ id: 2, text: '女性' },
+		{ id: 3, text: '設定なし' },
+	]
+
 
 	function init() {
 		if (me) {
@@ -81,7 +88,8 @@
 		<!-- Age -->
 		<FormInput type={ types.text } bind:label={ labels.age } bind:placeholder={ placeholders.age } bind:value={ params.age } />
 		<!-- Gender -->
-		<FormInput type={ types.text } bind:label={ labels.gender } bind:placeholder={ placeholders.gender } bind:value={ params.gender } />
+		<FormSelect bind:label={ labels.gender } bind:value={ params.age } options={ ages }/>
+		<!-- <FormInput type={ types.text } bind:label={ labels.gender } bind:placeholder={ placeholders.gender } bind:value={ params.gender } /> -->
 		<!-- Prefecture -->
 		<FormInput type={ types.text } bind:label={ labels.prefecture } bind:placeholder={ placeholders.prefecture } bind:value={ params.prefecture } />
 		<div>

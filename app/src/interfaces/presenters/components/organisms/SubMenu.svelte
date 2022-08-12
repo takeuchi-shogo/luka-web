@@ -6,7 +6,7 @@
 </script>
 
 
-<div class="flex flex-col w-64 h-screen md:block py-4 border-r">
+<div class="flex hidden flex-col w-64 h-screen md:block py-4 border-r">
 	<nav class="px-4">
 		<div>
 			<h1 class="pb-3 font-bold">設定</h1>

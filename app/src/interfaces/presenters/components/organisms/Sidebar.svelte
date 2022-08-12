@@ -8,7 +8,7 @@
 </script>
 
 
-<div class="hidden flex flex-col w-64 md:block py-4 border-r">
+<div class="hidden flex flex-col w-64 lg:block py-4 border-r">
 	<nav class="">
 		<div class="px-3 pb-3 font-bold">
 			<Logo />
