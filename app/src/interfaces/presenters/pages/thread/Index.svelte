@@ -8,6 +8,8 @@
 
 	const _thread = new ThreadRepository
 
+	export let me = null
+
 	let threads = []
 
 	let errorMessage = ''
@@ -24,6 +26,18 @@
 	}
 
 
+	function post(e) {
+		console.log('post data', e.detail)
+		// _thread.post(e.detail, (error, message, _data) => {
+		// 	if (error) {
+		// 		errorMessage = message
+		// 		return
+		// 	}
+		// 	init()
+		// })
+	}
+
+
 	onMount(() => {
 		init()
 	})
@@ -31,4 +45,4 @@
 </script>
 
 { errorMessage }
-<ThreadList bind:threads/>
+<ThreadList bind:threads bind:me={ me } on:post={ post } />

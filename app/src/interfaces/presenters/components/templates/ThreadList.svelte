@@ -1,16 +1,22 @@
 <script lang="ts">
 
+	import { createEventDispatcher } from 'svelte'
+
 	import { Link } from 'svelte-routing'
 
 	import ThreadListItem from 'interfaces/presenters/components/organisms/ThreadListItem.svelte'
 	import ThreadForm from 'interfaces/presenters/components/organisms/ThreadForm.svelte'
 
+	const _dispatch = createEventDispatcher()
+
+	export let me = null
 	export let threads = []
 
 	let threadId: number = 10
 
-	function init() {
-		console.log(threads)
+
+	function post(e) {
+		_dispatch('post', e.detail.params)
 	}
 
 </script>
@@ -23,7 +29,7 @@
 		</h1>
 	</div>
 	<div class="py-4">
-		<ThreadForm />
+		<ThreadForm bind:me={ me } on:post={ post } />
 	</div>
 	<div class="py-4 hover:bg-gray-100 border-b">
 		<!-- { #each threads as thread } -->

@@ -1,6 +1,6 @@
 <script lang="ts">
 
-import { onMount } from 'svelte'
+	import { onMount } from 'svelte'
 	import { Router } from 'svelte-routing'
 
 	import MeRepository from 'interfaces/database/me_repository'
@@ -25,6 +25,7 @@ import { onMount } from 'svelte'
 				return
 			}
 			me = data
+			console.log('app.svelte',me)
 			initialized = true
 		})
 	}
@@ -42,6 +43,6 @@ import { onMount } from 'svelte'
 	{ #if !initialized }
 		<Index />
 	{ :else }
-		<Dashboard me={ me }/>
+		<Dashboard bind:me={ me }/>
 	{ /if }
 </Router>

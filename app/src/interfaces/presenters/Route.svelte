@@ -15,7 +15,7 @@
 
 	// const _me = new MeRepository
 
-	// let me = null
+	export let me = null
 
 	// function init() {
 	// 	_me.get((error, message, data) => {
@@ -87,7 +87,7 @@
 	</Route>
 	
 	<Route path="/threads">
-		<ThreadIndex />
+		<ThreadIndex bind:me={ me } />
 	</Route>
 
 	<Route path="/threads/:id" let:params>

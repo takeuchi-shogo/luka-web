@@ -11,7 +11,7 @@
 
 <div class="pt-8 sm:flex group">
 	<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
-		<img class="w-full rounded-md h-32 lg:w-32 object-cover" src="../public/img/BotIcon.jpeg" alt="sample icon">
+		<img class="w-full rounded-md h-32 lg:w-32 object-cover" src="/public/img/BotIcon.jpeg" alt="sample icon">
 	</div>
 	<div>
 		<div class="text-sm">{ displayName }  <span class="text-gray-500">{ createdAt }</span></div>

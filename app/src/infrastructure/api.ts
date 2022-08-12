@@ -44,6 +44,7 @@ class Api{
 						})
 						return
 					}
+					console.log(error.response)
 					callback(error.response.status, error.response.data.result, error.response.data.data)
 					return
 				}

@@ -1,21 +1,32 @@
 <script lang="ts">
 
-	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 	import { fade } from 'svelte/transition'
+	import { createEventDispatcher } from 'svelte'
 
+	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
+	import type User from 'domain/users';
 
-	let title: string = ''
-	let discription:string = ''
+	const _dispatch = createEventDispatcher()
+
+	export let me: User = null
+
+	let params = {
+		userId: 0,
+		title: '',
+		discription: '',
+	}
 
 	let isModalOpen: boolean = false
 
 
-	function post() {
-		console.log(title, discription)
-	}
-
 	function isOpen() {
 		isModalOpen = !isModalOpen
+	}
+
+
+	function post() {
+		params.userId = me.id
+		_dispatch('post', { params: params })
 	}
 
 </script>
@@ -55,7 +66,7 @@
 				</div>
 				<div class="p-6 space-y-6">
 					<div class="">
-						<FormInput type={ 'text' } label={ 'タイトル' } placeholder={ 'タイトルを入力してください' } bind:value={ title }/>
+						<FormInput type={ 'text' } label={ 'タイトル' } placeholder={ 'タイトルを入力してください' } bind:value={ params.title }/>
 					</div>
 					<label
 						class="block uppercase text-gray-600 text-xs font-bold mb-1"
@@ -63,7 +74,7 @@
 					>
 						内容
 					</label>
-					<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ discription } placeholder="投稿内容を入力してください"></textarea>
+					<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ params.discription } placeholder="投稿内容を入力してください"></textarea>
 				</div>
 				<div class="p-6 flex justify-between">
 					<button
