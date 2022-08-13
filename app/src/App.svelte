@@ -39,7 +39,7 @@
 <!-- <TailwindCss /> -->
 
 <Router>
-	{ #if initialized }
+	{ #if !initialized }
 		<Index />
 	{ :else }
 		<Dashboard bind:me={ me }/>

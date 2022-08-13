@@ -13,8 +13,8 @@
 
 </script>
 
-<button
-	class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
+<button 
+	class="text-sm font-semibold text-white outline-none bg-indigo-500 border rounded hover:opacity-75 py-4 w-full"
 	on:click={ onClick }
 >
 	{ text }

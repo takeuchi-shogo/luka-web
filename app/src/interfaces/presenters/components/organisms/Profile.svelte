@@ -68,8 +68,8 @@ import FormSelect from '../molecules/FormSelect.svelte';
 </script>
 
 
-<article class="">
-	<div class="flex">
+<article class="md:max-w-md">
+	<div class="flex px-4 py-3">
 		<div class="md:w-32 md:h-32">User Icon</div>
 		<div>
 			<div>User Name</div>
@@ -78,21 +78,31 @@ import FormSelect from '../molecules/FormSelect.svelte';
 	</div>
 	<form>
 		<!-- DisplayName -->
-		<FormInput  type={ types.text } bind:label={ labels.displayName } bind:placeholder={ placeholders.displayName } bind:value={ params.displayName } />
+		<div class="px-4 py-3">
+			<FormInput  type={ types.text } bind:label={ labels.displayName } bind:placeholder={ placeholders.displayName } bind:value={ params.displayName } />
+		</div>
 		<!-- self introduction -->
 		<!-- <FormInput /> -->
 		<!-- Email -->
-		<FormInput type={ types.email } bind:label={ labels.email } bind:placeholder={ placeholders.email } bind:value={ params.email } />
+		<div class="px-4 py-3">
+			<FormInput type={ types.email } bind:label={ labels.email } bind:placeholder={ placeholders.email } bind:value={ params.email } />
+		</div>
 		<!-- Tel -->
 		<!-- <FormInput /> -->
 		<!-- Age -->
-		<FormInput type={ types.text } bind:label={ labels.age } bind:placeholder={ placeholders.age } bind:value={ params.age } />
+		<div class="px-4 py-3">
+			<FormInput type={ types.text } bind:label={ labels.age } bind:placeholder={ placeholders.age } bind:value={ params.age } />
+		</div>
 		<!-- Gender -->
-		<FormSelect bind:label={ labels.gender } bind:value={ params.age } options={ ages }/>
+		<div class="px-4 py-3">
+			<FormSelect bind:label={ labels.gender } bind:value={ params.age } options={ ages }/>
+		</div>
 		<!-- <FormInput type={ types.text } bind:label={ labels.gender } bind:placeholder={ placeholders.gender } bind:value={ params.gender } /> -->
 		<!-- Prefecture -->
-		<FormInput type={ types.text } bind:label={ labels.prefecture } bind:placeholder={ placeholders.prefecture } bind:value={ params.prefecture } />
-		<div>
+		<div class="px-4 py-3">
+			<FormInput type={ types.text } bind:label={ labels.prefecture } bind:placeholder={ placeholders.prefecture } bind:value={ params.prefecture } />
+		</div>
+		<div class="px-4 py-3">
 			<button
 				class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
 			>

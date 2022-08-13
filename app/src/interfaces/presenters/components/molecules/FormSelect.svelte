@@ -14,7 +14,7 @@ import Select from "../atoms/Select.svelte"
 
 </script>
 
-<div class="relative w-full mb-5">
+<div class="relative w-full">
 	<label
 		class="block uppercase text-gray-600 text-xs font-bold mb-2"
 		for="grid-password"

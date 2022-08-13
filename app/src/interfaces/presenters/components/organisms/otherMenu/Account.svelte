@@ -4,10 +4,9 @@
 	import { onMount } from 'svelte'
 	import { Link } from 'svelte-routing'
 
-	let test = 'test'
-
+	
 	onMount(() => {
-		console.log(test)
+		
 	})
 
 </script>
@@ -22,27 +21,57 @@
 	<nav>
 		<ul>
 			<li>
-				<div class="p-3">
-					<Link to="/others/account_edit">
-						アカウント情報を変更する
+				<div class="p-3 hover:bg-slate-100">
+					<Link to="/others/account_edit" class="flex justify-between">
+						<div class="flex">
+							<div class="self-center pr-4">
+								<i class="fa-solid fa-user"></i>
+							</div>
+							<div>
+								アカウント情報を変更する
+								<p class="font-medium text-sm text-gray-500">電話番号やメールアドレスなどのアカウント情報を確認できます</p>
+							</div>
+						</div>
+						<div class="self-center pl-3">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
 					</Link>
-					<p class="font-medium text-sm text-gray-500">電話番号やメールアドレスなどのアカウント情報を確認できます</p>
 				</div>
 			</li>
 			<li>
-				<div class="p-3">
-					<Link to="/others/password">
-						パスワードを変更する
+				<div class="p-3 hover:bg-slate-100">
+					<Link to="/others/password" class="flex justify-between">
+						<div class="flex">
+							<div class="self-center pr-4">
+								<i class="fa-solid fa-key"></i>
+							</div>
+							<div>
+								パスワードを変更する
+								<p class="font-medium text-sm text-gray-500">パスワードはいつでも変更できます</p>
+							</div>
+						</div>
+						<div class="self-center pl-3">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
 					</Link>
-					<p class="font-medium text-sm text-gray-500">パスワードはいつでも変更できます</p>
 				</div>
 			</li>
 			<li>
-				<div class="p-3">
-					<Link to="/others/deactivate">
-						アカウント削除
+				<div class="p-3 hover:bg-slate-100">
+					<Link to="/others/deactivate" class="flex justify-between">
+						<div class="flex">
+							<div class="self-center pr-4">
+								<i class="fa-solid fa-heart-crack"></i>
+							</div>
+							<div>
+								アカウント削除
+								<p class="font-medium text-sm text-gray-500">アカウントを削除する方法について説明します</p>
+							</div>
+						</div>
+						<div class="self-center pl-3">
+							<i class="fa-solid fa-angle-right"></i>
+						</div>
 					</Link>
-					<p class="font-medium text-sm text-gray-500">アカウントを削除する方法について説明します</p>
 				</div>
 			</li>
 		</ul>

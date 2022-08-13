@@ -18,7 +18,7 @@
 	<div class="py-4 my-6">
 		<h1 class="font-bold">アカウント新規作成</h1>
 	</div>
-	<div class="mb-6 lg:w-1/2 w-full">
+	<div class="mb-6 sm:w-600 w-full">
 		<SiginupForm on:signup={ signup } />
 	</div>
 </div>

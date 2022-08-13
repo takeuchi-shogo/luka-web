@@ -1,52 +1,28 @@
 
 <script lang="ts">
 
-	import { Link } from 'svelte-routing'
+	import SubMenuItem from 'interfaces/presenters/components/molecules/SubMenuItem.svelte'
+
+	let links = [
+		{ link: '/others/accounts', title: 'アカウント' },
+		{ link: '/others/security', title: 'セキュリティ' },
+		{ link: '/others/privacy', title: 'プライバシー' },
+		{ link: '/others/notifications', title: '通知設定' },
+		{ link: '/others/informations', title: 'お知らせ' },
+		{ link: '/others/columus', title: 'Lukaコラム' },
+		{ link: '/others/settings', title: 'その他の設定' },
+	]
 
 </script>
 
 
 <div class="flex hidden flex-col w-64 h-screen md:block py-4 border-r">
-	<nav class="px-4">
+	<nav>
 		<div>
-			<h1 class="pb-3 font-bold">設定</h1>
+			<h1 class="py-3 px-4 font-bold">設定</h1>
 		</div>
-		<ul class="font-semibold">
-			<li>
-				<div class="py-3">
-					<Link to="/others/accounts">アカウント</Link>
-				</div>
-			</li>
-			<li>
-				<div class="py-3">
-					<Link to="/others/security">セキュリティ</Link>
-				</div>
-			</li>
-			<li>
-				<div class="py-3">
-					<Link to="/others/privacy">プライバシー</Link>
-				</div>
-			</li>
-			<li>
-				<div class="py-3">
-					<Link to="/others/notifications">通知設定</Link>
-				</div>
-			</li>
-			<li>
-				<div class="py-3">
-					<Link to="/others/informations">お知らせ</Link>
-				</div>
-			</li>
-			<li>
-				<div class="py-3">
-					<Link to="/others/columus">Lukaコラム</Link>
-				</div>
-			</li>
-			<li>
-				<div class="py-3">
-					<Link to="/others/settings">その他の設定</Link>
-				</div>
-			</li>
-		</ul>
+		{ #each links as li }
+			<SubMenuItem link={ li.link } linkTitle={ li.title } />
+		{ /each }
 	</nav>
 </div>
