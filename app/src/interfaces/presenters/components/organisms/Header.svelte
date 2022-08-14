@@ -7,7 +7,7 @@
 </script>
 
 
-<header class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+<header class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 md:h-16">
 	<nav class="md:flex navbar max-w-screen-lx flex justify-between px-4 mx-6">
 		<ul class="md:flex text-gray-500 font-bold py-4 text-base">
 			<li>
@@ -31,7 +31,7 @@
 				<Link class="hover:opacity-75" to="/support">サポート</Link>
 			</li>
 		</ul>
-		<ul class="md:flex text-gray-500 text-xl font-semibold py-4 text-base">
+		<ul class="md:flex text-gray-500 font-semibold py-4 text-base">
 			<li>
 				<Link class="mr-4 hover:opacity-75" to="/signup">sign up</Link>
 			</li>
