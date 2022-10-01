@@ -16,13 +16,15 @@
 </script>
 
 
-<div class="flex hidden flex-col w-64 h-screen md:block py-4 border-r">
-	<nav>
-		<div>
-			<h1 class="py-3 px-4 font-bold">設定</h1>
-		</div>
-		{ #each links as li }
-			<SubMenuItem link={ li.link } linkTitle={ li.title } />
-		{ /each }
-	</nav>
+<div class="hidden md:block">
+	<div class="flex flex-col w-64 h-screen py-4 border-r">
+		<nav>
+			<div>
+				<h1 class="py-3 px-4 font-bold">設定</h1>
+			</div>
+			{ #each links as li }
+				<SubMenuItem link={ li.link } linkTitle={ li.title } />
+			{ /each }
+		</nav>
+	</div>
 </div>
