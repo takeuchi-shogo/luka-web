@@ -27,15 +27,15 @@ class ThreadRepository {
 
 	getList(params: Object, callback: (error: any, message: string, data: any) => void) {
 		this._api.get('/threads', params, (error, message, data) => {
-			let lists = []
+			let res = { lists: [] }
 			if (error) {
-				callback(error, message, { lists: lists })
+				callback(error, message, res)
 				return
 			}
 			forEach(data.lists, (list) => {
-				lists.push(new Thread(list))
+				res.lists.push(new Thread(list))
 			})
-			callback(error, message, { lists: lists })
+			callback(error, message, res)
 		})
 	}
 

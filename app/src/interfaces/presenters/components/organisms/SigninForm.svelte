@@ -10,17 +10,17 @@
 	const _dispatch = createEventDispatcher()
 
 	let label = {
-		email: 'Email',
+		screenName: 'ScreenName',
 		password: 'Password',
 	}
 
 	let types = {
-		email: 'email',
+		screenName: 'text',
 		password: 'password',
 	}
 
 	let params = {
-		email: '',
+		screenName: '',
 		password: '',
 	}
 
@@ -65,7 +65,7 @@
 		<hr class="w-full bg-gray-400">
 	</div>
 	<div class="mb-10">
-		<FormInput type={ types.email } bind:label={ label.email } bind:value={ params.email }/>
+		<FormInput type={ types.screenName } bind:label={ label.screenName } bind:value={ params.screenName }/>
 		<FormInput type={ types.password } bind:label={ label.password } bind:value={ params.password }/>
 	</div>
 	<Button text={ 'Sign in' } on:onClick={ signin }/>

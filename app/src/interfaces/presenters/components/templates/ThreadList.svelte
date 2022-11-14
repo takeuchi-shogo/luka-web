@@ -14,6 +14,8 @@
 
 	let threadId: number = 10
 
+	$:{ console.log(threads)}
+
 
 	function post(e) {
 		_dispatch('post', e.detail.params)
