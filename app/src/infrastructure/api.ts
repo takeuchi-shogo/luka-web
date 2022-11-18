@@ -83,11 +83,9 @@ class Api{
 			data: formData,
 		})
 			.then((res) => {
-				console.log("data1", res)
 				callback(null, res.data.result, res.data.data)
 			})
 			.catch((error) => {
-				console.log("res", error.response)
 				if (error.response) {
 					if (error.response.status == 406) {
 						this._refreshToken((err, message) => {
@@ -170,7 +168,7 @@ class Api{
 
 		const refreshToken = (cookie.get('refreshToken')) ? cookie.get('refreshToken') : ''
 
-		this.post('/token/refresh', { refreshToken: cookie.get('refreshToken') }, (error, message, data) => {
+		this.post('/tokens/refresh', { refreshToken: cookie.get('refreshToken') }, (error, message, data) => {
 			if (!error) {
 				// set cookie
 				cookie.set('token', data.token)

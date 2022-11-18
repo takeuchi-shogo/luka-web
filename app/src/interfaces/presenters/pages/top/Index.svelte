@@ -4,7 +4,6 @@
 
 
 	function init() {
-		console.log('top')
 	}
 
 	onMount(() => {

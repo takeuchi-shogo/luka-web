@@ -15,7 +15,7 @@
 
 <button 
 	class="text-sm font-semibold text-white outline-none bg-indigo-500 border rounded hover:opacity-75 py-4 w-full"
-	on:click={ onClick }
+	on:click|preventDefault={ onClick }
 >
 	{ text }
 </button>

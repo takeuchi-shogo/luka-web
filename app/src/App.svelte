@@ -5,8 +5,8 @@
 
 	import MeRepository from 'interfaces/database/me_repository'
 
-	import Index from './interfaces/presenters/index/Index.svelte'
-	import Dashboard from './interfaces/presenters/dashboard/Index.svelte'
+	import Index from './interfaces/presenters/Index.svelte'
+	import Dashboard from './interfaces/presenters/ApplicationPage.svelte'
 
 	import './lib/Tailwind.css'
 

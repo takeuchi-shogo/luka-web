@@ -47,11 +47,13 @@ class me_repository {
 
 
 	signin(params: Object, callback: (error: any, message: string, data: any) => void) {
+		console.log(params)
 		this._api.post('/tokens', params, (error, message, data) => {
 			if (error) {
 				callback(error, message, null)
 				return
 			}
+			console.log(data)
 			// set cookie
 			cookie.set('token', data.token)
 			cookie.set('tokenExpireAt', data.tokenExpireAt)

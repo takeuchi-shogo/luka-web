@@ -4,7 +4,7 @@
 	import { Route } from 'svelte-routing'
 
 	import CommentSingle from 'interfaces/presenters/pages/comment/Single.svelte'
-	import CommingSoon from 'interfaces/presenters/pages/CommingSoon.svelte'
+	import CommingSoon from 'interfaces/presenters/CommingSoon.svelte'
 	import OtherIndex from 'interfaces/presenters/pages/other/Index.svelte'
 	import ProfileIndex from 'interfaces/presenters/pages/profile/Index.svelte'
 	import TopIndex from 'interfaces/presenters/pages/top/Index.svelte'
