@@ -4,6 +4,8 @@
 	// import ThreadContent from 'src/interfaces/presenters/molecules/ThreadContent.svelte'
 	// import ThreadFooter from 'src/interfaces/presenters/molecules/ThreadFooter.svelte'
 
+	export let thread = {}
+
 	let displayName:string = 'テストユーザー'
 	let createdAt: string = 'August 20.20.21'
 	let title: string = '12 Graphic Design Skills You Need To Get Hired (& How to Develop Them)'
@@ -46,4 +48,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div>
+	{ thread }
 </div>

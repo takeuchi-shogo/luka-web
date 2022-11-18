@@ -34,10 +34,10 @@
 		<ThreadForm bind:me={ me } on:post={ post } />
 	</div>
 	<div class="py-4 hover:bg-gray-100 border-b">
-		<!-- { #each threads as thread } -->
-		<Link to="/threads/{ threadId }">
-			<ThreadListItem />
-		</Link>
-		<!-- {/each} -->
+		{ #each threads as thread }
+			<Link to="/threads/{ threadId }">
+				<ThreadListItem bind:thread />
+			</Link>
+		{/each}
 	</div>
 </div>

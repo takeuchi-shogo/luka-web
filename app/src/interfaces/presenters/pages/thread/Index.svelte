@@ -27,14 +27,15 @@
 
 
 	function post(e) {
-		console.log('post data', e.detail)
-		// _thread.post(e.detail, (error, message, _data) => {
-		// 	if (error) {
-		// 		errorMessage = message
-		// 		return
-		// 	}
-		// 	init()
-		// })
+		// console.log('post data', e.detail)
+		_thread.post(e.detail, (error, message, _data) => {
+			if (error) {
+				errorMessage = message
+				console.log(errorMessage)
+				return
+			}
+			init()
+		})
 	}
 
 
