@@ -14,7 +14,7 @@ class Api{
 	}
 
 	
-	get(endpoint: string, params: Object, callback: (error: any, message: string, data: any) => void) {
+	get(endpoint: string, params: Object, callback: (error: any, message: string, data: any) => any) {
 		let sendParams : any = (params == null) ? {} : params
 
 		if (cookie.get('token')) {
@@ -56,7 +56,7 @@ class Api{
 	}
 
 
-	post(endpoint: string, params: Object, callback: (error: any, message: string, data: any) => void) {
+	post(endpoint: string, params: Object, callback: (error: any, message: string, data: any) => any) {
 
 		let sendParams = (params == null) ? {} : params
 		const formData = new FormData()
@@ -110,7 +110,7 @@ class Api{
 	}
 
 
-	patch(endpoint: string, params: Object, callback: (error: any, message: string, data: Object) => void) {
+	patch(endpoint: string, params: Object, callback: (error: any, message: string, data: Object) => any) {
 
 		let sendParams = (params == null) ? {} : params
 		const formData = new FormData()
@@ -131,12 +131,12 @@ class Api{
 		})
 
 		axios({
-			method: 'post',
+			method: 'patch',
 			baseURL: this._config.url.api,
 			url: endpoint,
 			data: formData,
 		})
-			.then((response: AxiosResponse) => {
+			.then((response) => {
 				callback(null, response.data.result, response.data.data)
 			})
 			.catch((error) => {

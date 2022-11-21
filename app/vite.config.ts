@@ -15,7 +15,8 @@ export default defineConfig({
 		'domain': path.resolve('src/domain'),
 		'infrastructure': path.resolve('src/infrastructure'),
 		'interfaces': path.resolve('src/interfaces'),
-		'lib': path.resolve('src/lib')
+		'lib': path.resolve('src/lib'),
+		'utils': path.resolve('src/utils')
 		// 'usecase': path.resolve('src/usecase')
 	  }
 	},

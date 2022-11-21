@@ -13,7 +13,7 @@
 	let params = {
 		userId: 0,
 		title: '',
-		discription: '',
+		description: '',
 	}
 
 	let isModalOpen: boolean = false
@@ -74,7 +74,7 @@
 					>
 						内容
 					</label>
-					<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ params.discription } placeholder="投稿内容を入力してください"></textarea>
+					<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ params.description } placeholder="投稿内容を入力してください"></textarea>
 				</div>
 				<div class="p-6 flex justify-between">
 					<button

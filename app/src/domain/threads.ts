@@ -2,6 +2,9 @@
 import { forEach } from 'lodash'
 
 
+import User from 'domain/users'
+import { formatDate } from 'utils/format'
+
 class Thread {
 
 	id: number
@@ -11,6 +14,14 @@ class Thread {
 	title: string
 
 	description: string
+
+	user:User
+
+	commentCnt: number
+
+	favoriteCnt: number
+
+	createdAt: number
 
 
 	constructor(obj: Object) {
@@ -23,13 +34,33 @@ class Thread {
 
 		this.description = ''
 
+		this.user = null
+
+		this.commentCnt = 0
+
+		this.favoriteCnt = 0
+
+		this.createdAt = 0
+
 		if (obj) {
 			forEach(this, (_value, key) => {
 				if (obj.hasOwnProperty(key)) {
-					this[key] = obj[key]
+					switch (key) {
+						case 'user':
+							this[key] = new User(obj[key])
+							break
+						default:
+							this[key] = obj[key]
+							break
+						}
 				}
 			})
 		}
+	}
+
+	get formatCreatedAt() {
+		console.log(this.createdAt)
+		return formatDate(this.createdAt)
 	}
 }
 

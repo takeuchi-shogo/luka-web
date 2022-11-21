@@ -30,67 +30,73 @@
 
 <main class="flex flex-col flex-1">
 	<!-- before signin -->
-	<Route path="" component={ TopIndex } />
+	{ #if !me }
 
-	<Route path="/service">
-		<CommingSoon />
-	</Route>
+		<Route path="" component={ TopIndex } />
 
-	<Route path="/about_luka">
-		<CommingSoon />
-	</Route>
+		<Route path="/service">
+			<CommingSoon />
+		</Route>
 
-	<Route path="/safty">
-		<CommingSoon />
-	</Route>
+		<Route path="/about_luka">
+			<CommingSoon />
+		</Route>
 
-	<Route path="/support">
-		<CommingSoon />
-	</Route>
+		<Route path="/safty">
+			<CommingSoon />
+		</Route>
 
-	<!--  -->
-	<Route path="/signin">
-		<SigninIndex />
-	</Route>
+		<Route path="/support">
+			<CommingSoon />
+		</Route>
 
-	<Route path="/signup">
-		<SignupIndex />
-	</Route>
+		<!--  -->
+		<Route path="/signin">
+			<SigninIndex />
+		</Route>
 
-	<!-- after signin -->
-	<Route path="/comments/:id" let:params>
-		<CommentSingle id={ params.id } />
-	</Route>
-	
-	<Route path="/communities">
-		<CommingSoon />
-	</Route>
+		<Route path="/signup">
+			<SignupIndex />
+		</Route>
 
-	<Route path="/messages">
-		<CommingSoon />
-	</Route>
+	{ :else }
 
-	<Route path="/others">
-		<OtherIndex />
-	</Route>
+		<!-- after signin -->
+		<Route path="/comments/:id" let:params>
+			<CommentSingle id={ params.id } />
+		</Route>
+		
+		<Route path="/communities">
+			<CommingSoon />
+		</Route>
 
-	<Route path="/others/:category" let:params>
-		<OtherIndex category={ params.category } />
-	</Route>
+		<Route path="/messages">
+			<CommingSoon />
+		</Route>
 
-	<Route path="/profile">
-		<ProfileIndex />
-	</Route>
+		<Route path="/others">
+			<OtherIndex />
+		</Route>
 
-	<Route path="/search">
-		<CommingSoon />
-	</Route>
-	
-	<Route path="/threads">
-		<ThreadIndex bind:me={ me } />
-	</Route>
+		<Route path="/others/:category" let:params>
+			<OtherIndex category={ params.category } />
+		</Route>
 
-	<Route path="/threads/:id" let:params>
-		<ThreadSingle id={ params.id } />
-	</Route>
+		<Route path="/profile">
+			<ProfileIndex bind:me />
+		</Route>
+
+		<Route path="/search">
+			<CommingSoon />
+		</Route>
+		
+		<Route path="/threads">
+			<ThreadIndex bind:me={ me } />
+		</Route>
+
+		<Route path="/threads/:id" let:params>
+			<ThreadSingle id={ params.id } />
+		</Route>
+
+	{ /if }
 </main>

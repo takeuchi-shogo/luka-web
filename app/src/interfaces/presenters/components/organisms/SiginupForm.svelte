@@ -4,6 +4,7 @@
 	
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 	import Button from 'interfaces/presenters/components/atoms/button/LoginButton.svelte'
+    import FormSelect from '../molecules/FormSelect.svelte';
 
 	const _dispatch = createEventDispatcher()
 
@@ -43,6 +44,17 @@
 		prefecture: '',
 	}
 
+	let genders = [
+		{ value: 'men', text: '男性' },
+		{ value: 'women', text: '女性' },
+		{ value: 'other', text: 'その他' },
+	]
+
+	let prefectures = [
+		{ value: '1', text: '北海道' },
+		{ value: '47', text: '沖縄県' },
+	]
+
 	
 	function signup() {
 		_dispatch('signup', {params: params})
@@ -69,10 +81,10 @@
 			<FormInput type={ types.text } bind:label={ labels.age } bind:placeholder={ placeholders.age } bind:value={ params.age } />			
 		</div>
 		<div class="px-4 py-3">
-			<FormInput type={ types.text } bind:label={ labels.gender } bind:placeholder={ placeholders.gender } bind:value={ params.gender } />
+			<FormSelect bind:label={ labels.gender } bind:value={ placeholders.gender } bind:options={ genders } />
 		</div>
 		<div class="px-4 py-3">
-			<FormInput type={ types.text } bind:label={ labels.prefecture } bind:placeholder={ placeholders.prefecture } bind:value={ params.prefecture } />
+			<FormSelect bind:label={ labels.prefecture } bind:value={ params.prefecture } options={ prefectures } />
 		</div>
 	</div>
 	<div class="px-4 py-3">

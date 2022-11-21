@@ -2,6 +2,7 @@
 
 	import Profile from 'interfaces/presenters/components/organisms/Profile.svelte'
 
+	export let me = null
 
 </script>
 
@@ -12,5 +13,5 @@
 			Profile Page
 		</h1>
 	</div>
-	<Profile />
+	<Profile bind:me />
 </div>

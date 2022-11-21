@@ -11,9 +11,11 @@ class User {
 
 	age: number
 
-	gender: string
+	gender: number
 
 	email: string
+
+	prefecture: number
 
 	constructor(obj: Object) {
 
@@ -25,9 +27,11 @@ class User {
 
 		this.age = 0
 
-		this.gender = ''
+		this.gender = 0
 
 		this.email = ''
+
+		this.prefecture = 0
 
 		if (obj) {
 			forEach(this, (_value, key) => {
