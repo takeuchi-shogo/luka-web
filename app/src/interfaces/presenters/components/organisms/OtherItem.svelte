@@ -23,6 +23,18 @@
 		<Account />
 	{ :else if category == 'account_edit' }
 		<AccountEdit me={ me } />
+	{ :else if category == 'screen_name' }
+	<!-- { :else if category == 'phone' }
+		<PhoneEdit />
+	{ :else if category == 'email' }
+		<EmailEdit />
+	{ :else if category == 'audience' }
+		<Audience />
+	{ :else if category == 'contry' }
+		<ContryEdit /> -->
+	<!-- { :else if category == 'languages' }
+	{ :else if category == 'gender' }
+	{ :else if category == 'age' } -->
 	{ :else if category == 'deactivate' }
 		<Deactivate me={ me } />
 	{ :else if category == 'security' }
@@ -33,6 +45,10 @@
 		<Privacy />
 	{ :else if category == 'notifications' }
 		<Notification />
+	<!-- { :else if category == 'informations' }
+		<Informations />
+	{ :else if category == 'columns' } 
+		<Colums /> -->
 	{ :else if category == 'settings' }
 		<Setting />
 	{ /if }

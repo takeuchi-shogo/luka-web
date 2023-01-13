@@ -14,7 +14,7 @@ class ThreadRepository {
 	}
 
 
-	get(id: string, callback: (error: any, message: string, data: any) => void) {
+	get(id: string, callback: (error: any, message: string, data: any) => any) {
 		this._api.get('/threads/' + id, null, (error, message, data) => {
 			if (error) {
 				callback(error, message, new Thread(null))
@@ -25,7 +25,7 @@ class ThreadRepository {
 	}
 
 
-	getList(params: Object, callback: (error: any, message: string, data: any) => void) {
+	getList(params: Object, callback: (error: any, message: string, data: any) => any) {
 		this._api.get('/threads', params, (error, message, data) => {
 			let lists = []
 			if (error) {

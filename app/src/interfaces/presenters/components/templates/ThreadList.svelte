@@ -32,7 +32,7 @@
 		<ThreadForm bind:me={ me } on:post={ post } />
 	</div>
 	{ #each threads as thread }
-		<Link to="/threads/{ threadId }">
+		<Link to="/threads/{ thread.id }">
 			<ThreadListItem bind:thread />
 		</Link>
 	{/each}

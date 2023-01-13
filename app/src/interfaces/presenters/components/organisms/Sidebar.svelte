@@ -1,9 +1,7 @@
 <script lang="ts">
 
-	import { Link } from 'svelte-routing'
-
 	import Logo from 'interfaces/presenters/components/atoms/Logo.svelte'
-import SideMenuItem from '../molecules/SideMenuItem.svelte'
+	import SideMenuItem from '../molecules/SideMenuItem.svelte'
 
 
 	let links = [

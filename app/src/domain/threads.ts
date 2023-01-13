@@ -3,6 +3,8 @@ import { forEach } from 'lodash'
 
 
 import User from 'domain/users'
+import Comment from 'domain/comments'
+
 import { formatDate } from 'utils/format'
 
 class Thread {
@@ -16,6 +18,8 @@ class Thread {
 	description: string
 
 	user:User
+
+	comments: Comment[]
 
 	commentCnt: number
 
@@ -36,6 +40,8 @@ class Thread {
 
 		this.user = null
 
+		this.comments = []
+
 		this.commentCnt = 0
 
 		this.favoriteCnt = 0
@@ -49,6 +55,11 @@ class Thread {
 						case 'user':
 							this[key] = new User(obj[key])
 							break
+						case 'comments':
+							forEach(obj[key], (list) => {
+								this[key].push(new Comment(list))
+							})
+							break
 						default:
 							this[key] = obj[key]
 							break
@@ -59,7 +70,6 @@ class Thread {
 	}
 
 	get formatCreatedAt() {
-		console.log(this.createdAt)
 		return formatDate(this.createdAt)
 	}
 }

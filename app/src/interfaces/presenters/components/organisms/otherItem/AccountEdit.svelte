@@ -3,9 +3,12 @@
 
 	import { Link } from 'svelte-routing'
 
+	import Me from 'interfaces/database/me_repository'
 
 	import Button from 'interfaces/presenters/components/atoms/button/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
+
+	const _me = new Me
 
 	export let me = null
 
@@ -33,6 +36,11 @@
 
 	function signout() {
 		console.log('ログアウトしました')
+		_me.signout((error, message) => {
+			if (error) {
+				return
+			}
+		})
 	}
 
 </script>
@@ -63,8 +71,10 @@
 			</form>
 		</div>
 		<div>
-			<div class="w-full text-center">
-				<span class="text-red-600" on:click={ signout }>ログアウト</span>
+			<div class="w-full text-center hover:bg-rose-100 ">
+				<div class="py-3">
+					<span class="text-red-600" on:click={ signout }>ログアウト</span>
+				</div>
 			</div>
 		</div>
 	</div>
