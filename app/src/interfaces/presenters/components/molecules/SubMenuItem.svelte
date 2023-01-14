@@ -9,7 +9,7 @@
 </script>
 
 
-<div class="py-3 px-4">
+<div class="py-3 px-4 hover:bg-slate-100">
 	<Link to="{ link }">
 		<div class="flex justify-between">
 			<div>

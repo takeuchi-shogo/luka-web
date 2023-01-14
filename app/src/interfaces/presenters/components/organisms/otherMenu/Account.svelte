@@ -2,7 +2,30 @@
 <script lang="ts">
 
 	import { onMount } from 'svelte'
-	import { Link } from 'svelte-routing'
+	import SettingDetailItem from '../../molecules/SettingDetailItem.svelte'
+
+	let content: string = 'アカウントについての情報を確認したり、データのアーカイブをダウンロードしたり、アカウント停止オプションの詳細を確認したりできます'
+
+	let accountLinks = [
+		{
+			to: '/others/account_edit',
+			icon: 'fa-solid fa-user',
+			title: 'アカウント情報を変更する',
+			description: '電話番号やメールアドレスなどのアカウント情報を確認できます',
+		},
+		{
+			to: '/others/password',
+			icon: 'fa-solid fa-key',
+			title: 'パスワードを変更する',
+			description: 'パスワードはいつでも変更できます',
+		},
+		{
+			to: '/others/deactivate',
+			icon: 'fa-solid fa-heart-crack',
+			title: 'アカウント削除',
+			description: 'アカウントを削除する方法について説明します',
+		},
+	]
 
 	
 	onMount(() => {
@@ -18,62 +41,23 @@
 			アカウント情報ページ
 		</h1>
 	</div>
-	<nav>
-		<ul>
-			<li>
-				<div class="p-3 hover:bg-slate-100">
-					<Link to="/others/account_edit" class="flex justify-between">
-						<div class="flex">
-							<div class="self-center pr-4">
-								<i class="fa-solid fa-user"></i>
-							</div>
-							<div>
-								アカウント情報を変更する
-								<p class="font-medium text-sm text-gray-500">電話番号やメールアドレスなどのアカウント情報を確認できます</p>
-							</div>
-						</div>
-						<div class="self-center pl-3">
-							<i class="fa-solid fa-angle-right"></i>
-						</div>
-					</Link>
-				</div>
-			</li>
-			<li>
-				<div class="p-3 hover:bg-slate-100">
-					<Link to="/others/password" class="flex justify-between">
-						<div class="flex">
-							<div class="self-center pr-4">
-								<i class="fa-solid fa-key"></i>
-							</div>
-							<div>
-								パスワードを変更する
-								<p class="font-medium text-sm text-gray-500">パスワードはいつでも変更できます</p>
-							</div>
-						</div>
-						<div class="self-center pl-3">
-							<i class="fa-solid fa-angle-right"></i>
-						</div>
-					</Link>
-				</div>
-			</li>
-			<li>
-				<div class="p-3 hover:bg-slate-100">
-					<Link to="/others/deactivate" class="flex justify-between">
-						<div class="flex">
-							<div class="self-center pr-4">
-								<i class="fa-solid fa-heart-crack"></i>
-							</div>
-							<div>
-								アカウント削除
-								<p class="font-medium text-sm text-gray-500">アカウントを削除する方法について説明します</p>
-							</div>
-						</div>
-						<div class="self-center pl-3">
-							<i class="fa-solid fa-angle-right"></i>
-						</div>
-					</Link>
-				</div>
-			</li>
-		</ul>
-	</nav>
+	<div>
+		<div class="py-3 px-4">
+			{ content }
+		</div>
+		<nav>
+			<ul>
+				{ #each accountLinks as link }
+					<li>
+						<SettingDetailItem
+							link={ link.to }
+							icon={ link.icon }
+							title={ link.title }
+							description={ link.description }
+						/>
+					</li>
+				{ /each }
+			</ul>
+		</nav>
+	</div>
 </div>

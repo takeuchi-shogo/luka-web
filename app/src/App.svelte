@@ -21,7 +21,7 @@
 		_me.get((error, message, data) => {
 			if (error) {
 				// initialized = false
-				window.location.href = '/signin'
+				// window.location.href = '/signin'
 				return
 			}
 			me = data

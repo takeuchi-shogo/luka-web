@@ -9,7 +9,6 @@ dayjs.extend(customParseFormat)
 export const formatDate = (date: number) => dayjs(date, 'X').format('YYYY年 MM月 D日 HH:mm')
 
 export const formatGender = (data:number) => {
-	console.log('ddd',data)
 	switch (data) {
 		case 1:
 			return '男性'

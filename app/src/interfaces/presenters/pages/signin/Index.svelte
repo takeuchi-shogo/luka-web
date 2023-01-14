@@ -17,13 +17,13 @@
 
 
 	function signin(event) {
-		// _me.signin(event.detail.params, (error, message, data) => {
-		// 	if (error) {
-		// 		errorMessage = message
-		// 		return
-		// 	}
-		// 	window.location.href = '/home'
-		// })
+		_me.signin(event.detail.params, (error, message, data) => {
+			if (error) {
+				errorMessage = message
+				return
+			}
+			window.location.href = '/home'
+		})
 	}
 
 	function init() {

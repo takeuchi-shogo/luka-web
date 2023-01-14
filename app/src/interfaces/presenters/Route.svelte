@@ -3,6 +3,7 @@
 
 	import { Route } from 'svelte-routing'
 
+	import UserSingle from 'interfaces/presenters/pages/users/Single.svelte'
 	import CommentSingle from 'interfaces/presenters/pages/comment/Single.svelte'
 	import CommingSoon from 'interfaces/presenters/CommingSoon.svelte'
 	import OtherIndex from 'interfaces/presenters/pages/other/Index.svelte'
@@ -60,6 +61,14 @@
 		</Route>
 
 	{ :else }
+
+		<Route path="/:screenName">
+			<UserSingle bind:me={ me }/>
+		</Route>
+
+		<Route path="/:screenName/:category" let:params>
+			<UserSingle bind:me={ me } category={ params.category } />
+		</Route>
 
 		<!-- after signin -->
 		<Route path="/comments/:id" let:params>

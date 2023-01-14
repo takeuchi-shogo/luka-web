@@ -3,21 +3,23 @@
 	import Logo from 'interfaces/presenters/components/atoms/Logo.svelte'
 	import SideMenuItem from '../molecules/SideMenuItem.svelte'
 
+	export let me = null
+
 
 	let links = [
 		{ link: '/threads', icon: 'fa-solid fa-house', title: '投稿' },
 		{ link: '/search', icon: 'fa-solid fa-magnifying-glass', title: '検索' },
 		{ link: '/communities', icon: 'fa-solid fa-users', title: 'コミュニティ' },
 		{ link: '/messages', icon: 'fa-solid fa-comment-dots', title: 'メッセージ' },
-		{ link: '/profile', icon: 'fa-regular fa-user', title: 'プロフィール' },
+		{ link: '/' + me.screenName, icon: 'fa-regular fa-user', title: 'プロフィール' },
 		{ link: '/others/accounts', icon: 'fa-solid fa-gear', title: 'その他' },
 	]
 
 </script>
 
 
-<div class="hidden md:inline-block">
-	<div class="flex flex-col w-16 lg:w-64 py-4 border-r">
+<div class="hidden md:inline-block border-r">
+	<div class="flex flex-col w-16 lg:w-64 py-4">
 		<nav class="">
 			<div class="px-3 pb-3 font-bold">
 				<Logo />

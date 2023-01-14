@@ -49,6 +49,17 @@ class ThreadRepository {
 			callback(error, message, new Thread(data))
 		})
 	}
+
+
+	delete(id:number, callback: (error: any, message: string) => any) {
+		this._api.delete('/threads/' + id, null, (error, message, _data) => {
+			if (error) {
+				callback(error, message)
+				return
+			}
+			callback(error, message)
+		})
+	}
 }
 
 

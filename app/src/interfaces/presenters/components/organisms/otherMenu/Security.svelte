@@ -1,3 +1,49 @@
+
+<script lang="ts">
+
+	import SettingDetailHeader from '../../molecules/SettingDetailHeader.svelte'
+    import SettingDetailItem from '../../molecules/SettingDetailItem.svelte';
+
+	let content: string = 'アカウントのセキュリティを管理したり、アカウントと連携したアプリなどのアカウントによる使用を追跡したりします。'
+
+	let securityLinks = [
+		{
+			to: '/others/security',
+			icon: '',
+			title: 'セキュリティー',
+			description: 'アカウントのセキュリティを管理します。',
+		},
+		{
+			to: '/others/apps_and_sessions',
+			icon: '',
+			title: 'アプリとセッション',
+			description: 'アカウントのセキュリティを管理します。',
+		},
+	]
+
+</script>
+
 <div>
-	Security Page
+	<SettingDetailHeader
+		title={ 'セキュリティ' }
+	/>
+	<div>
+		<div class="py-3 px-4">
+			{ content }
+		</div>
+		<nav>
+			<ul>
+				{ #each securityLinks as link }
+					<li>
+						<SettingDetailItem
+							link={ link.to }
+							icon={ link.icon }
+							title={ link.title }
+							description={ link.description }
+						/>
+					</li>
+				{ /each }
+			</ul>
+		</nav>
+	</div>
 </div>

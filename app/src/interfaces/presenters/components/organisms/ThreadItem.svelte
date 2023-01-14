@@ -1,8 +1,27 @@
 
 <script lang="ts">
+
+	import ThreadRepository from 'interfaces/database/thread_repository'
+
 	import type Thread from 'domain/threads'
 
 	export let thread:Thread = null
+	// export let threadId:number = 0
+
+	const _thread = new ThreadRepository
+
+	let errorMessage = ''
+
+	function remove() {
+		_thread.delete(thread.id, (error, message) => {
+			if (error) {
+				console.log(message)
+				errorMessage = message
+				return
+			}
+			window.location.href = '/threads'
+		})
+	}
 	
 </script>
 
@@ -30,6 +49,9 @@
 						</svg>
 						<span>{ thread.favoriteCnt }</span>
 					</div>
+				</div>
+				<div>
+					<div on:click={ remove }>削除する</div>
 				</div>
 			</div>
 		</div>
