@@ -2,14 +2,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 
+	import { Route } from 'svelte-routing'
+
 	import CommentListItem from '../CommentListItem.svelte'
 	import ThreadItem from '../ThreadItem.svelte'
 	import UserProfile from './UserProfile.svelte'
 	import UserTagBar from './UserTagBar.svelte'
 
 	export let me = null
-	export let userId = ''
-	export let category = ''
+	// export let userId = ''
+	// export let category = ''
 
 	let user = null
 
@@ -39,15 +41,15 @@
 			<UserTagBar bind:param={ user.screenName }/>
 		</div>
 		<div>
-			{ #if category == '' }
+			<Route path="">
 				Thread List
-				<!-- <ThreadList/> -->
-			{ :else if category == 'threads_and_comments'}
+			</Route>
+			<Route path="threads_and_comments">
 				<CommentListItem/>
-			{ :else if category == 'favorites' }
-				<!-- <ThreadItem/> -->
-				Thread List
-			{ /if }
+			</Route>
+			<Route path="favorites">
+				Favorite List
+			</Route>
 		</div>
 	</div>
 { /if }

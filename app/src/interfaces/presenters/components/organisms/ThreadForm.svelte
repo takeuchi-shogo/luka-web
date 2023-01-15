@@ -1,12 +1,14 @@
 <script lang="ts">
 
 	import { fade } from 'svelte/transition'
-	import { createEventDispatcher } from 'svelte'
+
+	import ThreadRepository from 'interfaces/database/thread_repository'
 
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
-	import type User from 'domain/users';
+	import type User from 'domain/users'
+    import ErrorMessage from '../atoms/ErrorMessage.svelte';
 
-	const _dispatch = createEventDispatcher()
+	const _thread = new ThreadRepository
 
 	export let me: User = null
 
@@ -18,6 +20,8 @@
 
 	let isModalOpen: boolean = false
 
+	let errorMessage: string = ''
+
 
 	function isOpen() {
 		isModalOpen = !isModalOpen
@@ -26,7 +30,13 @@
 
 	function post() {
 		params.userId = me.id
-		_dispatch('post', { params: params })
+		_thread.post(params, (error, message, data) => {
+			if (error) {
+				errorMessage = message
+				return
+			}
+			isModalOpen = false
+		})
 	}
 
 </script>
@@ -63,6 +73,9 @@
 						<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 						<span class="sr-only">Close modal</span>
 					</button>
+				</div>
+				<div>
+					<ErrorMessage bind:message={ errorMessage } />
 				</div>
 				<div class="p-6 space-y-6">
 					<div class="">

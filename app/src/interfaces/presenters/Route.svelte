@@ -62,12 +62,12 @@
 
 	{ :else }
 
-		<Route path="/:screenName">
+		<!-- <Route path="/:screenName">
 			<UserSingle bind:me={ me }/>
-		</Route>
+		</Route> -->
 
-		<Route path="/:screenName/:category" let:params>
-			<UserSingle bind:me={ me } category={ params.category } />
+		<Route path="/:screenName/*">
+			<UserSingle bind:me={ me }/>
 		</Route>
 
 		<!-- after signin -->

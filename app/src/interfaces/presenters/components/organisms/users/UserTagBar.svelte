@@ -21,10 +21,10 @@
 	]
 
 	let path: string = ''
+	
 
 	function init() {
 		path = location.pathname
-		console.log(path)
 	}
 
 	onMount(() => {
@@ -39,7 +39,7 @@
 			{ #each tagLinks as link }
 				<div class="px-4">
 					<Link to={ link.to }>
-						<div class="py-4">
+						<div class="py-4" on:click={ () => path = link.to }>
 							<span class="text-sm font-semibold">
 								{ link.text }
 							</span>
