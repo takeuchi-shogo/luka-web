@@ -14,7 +14,7 @@
 
 	let me = null
 
-	let initialized = false
+	// let initialized = false
 
 
 	function initialize() {
@@ -25,7 +25,7 @@
 				return
 			}
 			me = data
-			initialized = true
+			// initialized = true
 		})
 	}
 
@@ -39,7 +39,7 @@
 <!-- <TailwindCss /> -->
 
 <Router>
-	{ #if !initialized }
+	{ #if !me }
 		<Index />
 	{ :else }
 		<Dashboard bind:me={ me }/>

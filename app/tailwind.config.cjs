@@ -1,6 +1,7 @@
 module.exports = {
   mode: "jit",
-  plugins: [],
+  // content: ['./src/**/*.{svelte,js,ts}'],
+  // plugins: [require("daisyui")],
   theme: {
     extend: {
       spacing: {

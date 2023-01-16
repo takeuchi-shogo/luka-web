@@ -17,6 +17,12 @@ class User {
 
 	prefecture: number
 
+	threadCnt: number
+
+	followingCnt: number
+
+	followerCnt: number
+
 	constructor(obj: Object) {
 
 		this.id = 0
@@ -32,6 +38,12 @@ class User {
 		this.email = ''
 
 		this.prefecture = 0
+
+		this.threadCnt = 0
+
+		this.followingCnt = 0
+
+		this.followerCnt = 0
 
 		if (obj) {
 			forEach(this, (_value, key) => {

@@ -1,6 +1,7 @@
 
 <script lang="ts">
 
+	// import Button, { Label } from '@smui/button'
 	import ThreadRepository from 'interfaces/database/thread_repository'
 
 	import type Thread from 'domain/threads'
@@ -51,7 +52,11 @@
 					</div>
 				</div>
 				<div>
-					<div on:click={ remove }>削除する</div>
+					<!-- <Button on:click={ remove }>
+						<Label>
+							削除する
+						</Label>
+					</Button> -->
 				</div>
 			</div>
 		</div>

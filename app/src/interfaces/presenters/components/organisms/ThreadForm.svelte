@@ -4,9 +4,10 @@
 
 	import ThreadRepository from 'interfaces/database/thread_repository'
 
+	import Button from '../atoms/buttons/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 	import type User from 'domain/users'
-    import ErrorMessage from '../atoms/ErrorMessage.svelte';
+	import ErrorMessage from '../atoms/ErrorMessage.svelte'
 
 	const _thread = new ThreadRepository
 
@@ -53,6 +54,11 @@
 		>
 			投稿する
 		</button>
+		<!-- <Button on:click={ isOpen }>
+			<Label>
+				投稿する
+			</Label>
+		</Button> -->
 	</div>
 </div>
 
@@ -78,6 +84,14 @@
 					<ErrorMessage bind:message={ errorMessage } />
 				</div>
 				<div class="p-6 space-y-6">
+					<!-- <Textfield
+						type="text"
+						bind:value={ params.title }
+						label={ 'タイトル' }
+						class="w-full"
+					>
+						<HelperText slot="helper"></HelperText>
+					</Textfield> -->
 					<div class="">
 						<FormInput type={ 'text' } label={ 'タイトル' } placeholder={ 'タイトルを入力してください' } bind:value={ params.title }/>
 					</div>
@@ -90,7 +104,12 @@
 					<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ params.description } placeholder="投稿内容を入力してください"></textarea>
 				</div>
 				<div class="p-6 flex justify-between">
-					<button
+					<Button on:click={ post }>
+						<!-- <Label> -->
+							投稿する
+						<!-- </Label> -->
+					</Button>
+					<!-- <button
 						class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
 						on:click={ post }
 					>
@@ -101,7 +120,12 @@
 						on:click={ isOpen }
 					>
 						Cancel
-					</button>
+					</button> -->
+					<Button on:click={ isOpen }>
+						<!-- <Label> -->
+							Cancel
+						<!-- </Label> -->
+					</Button>
 				</div>
 			</div>
 		</div>

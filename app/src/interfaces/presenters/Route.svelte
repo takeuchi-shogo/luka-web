@@ -14,17 +14,7 @@
 	import ThreadIndex from 'interfaces/presenters/pages/thread/Index.svelte'
 	import ThreadSingle from 'interfaces/presenters/pages/thread/Single.svelte'
 
-	// const _me = new MeRepository
-
 	export let me = null
-
-	// function init() {
-	// 	_me.get((error, message, data) => {
-	// 		if(error) {
-
-	// 		}
-	// 	})
-	// }
 
 </script>
 

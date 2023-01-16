@@ -3,7 +3,7 @@
 	import { createEventDispatcher } from 'svelte'
 	
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
-	import Button from 'interfaces/presenters/components/atoms/button/LoginButton.svelte'
+	import Button from 'interfaces/presenters/components/atoms/buttons/LoginButton.svelte'
     import FormSelect from '../molecules/FormSelect.svelte';
 
 	const _dispatch = createEventDispatcher()
