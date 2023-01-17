@@ -2,6 +2,6 @@
 
 </script>
 
-<div class="mx-8 px-4">
+<div class="sm:mx-8 px-2 sm:px-4">
 	<slot><!-- optional fallback --></slot>
 </div>

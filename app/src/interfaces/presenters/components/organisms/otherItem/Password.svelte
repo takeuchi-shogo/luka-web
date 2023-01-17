@@ -3,6 +3,7 @@
 	import { Link } from 'svelte-routing'
 
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
+	import Button from '../../atoms/buttons/Button.svelte'
 
 	export const me = null
 	
@@ -72,11 +73,8 @@
 		</p>
 	</div>
 	<div class="px-4 py-3">
-		<button
-			class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
-			on:click|preventDefault={ save }
-		>
+		<Button on:click={ save }>
 			保存する
-		</button>
+		</Button>
 	</div>
 </div>

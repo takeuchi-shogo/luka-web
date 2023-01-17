@@ -30,11 +30,12 @@
 	let path: string = ''
 	let initalized: boolean = false
 
-	$: {console.log(location.pathname)}
+	$: {
+		path = window.location.pathname
+	}
 
 
 	function init() {
-		path = location.pathname
 		forEach(tabLinks, (link, key) => {
 			if (path == link.to) {
 				active = tabLinks[key]
@@ -50,13 +51,11 @@
 </script>
 
 { #if initalized }
-	<div>
-		<div class="">
-			<div class="flex justify-between">
-				<Tabs>
-					<Tab tabs={ tabLinks } bind:path={ path }/>
-				</Tabs>
-			</div>
+	<div class="">
+		<div class="flex justify-between">
+			<Tabs>
+				<Tab tabs={ tabLinks } bind:path={ path }/>
+			</Tabs>
 		</div>
 	</div>
 { /if }

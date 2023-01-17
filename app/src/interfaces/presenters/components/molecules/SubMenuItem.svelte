@@ -12,7 +12,7 @@
 <div class="py-3 px-4 hover:bg-slate-100">
 	<Link to="{ link }">
 		<div class="flex justify-between">
-			<div>
+			<div class="font-normal text-md">
 				{ linkTitle }
 			</div>
 			<div class="self-center pl-3">

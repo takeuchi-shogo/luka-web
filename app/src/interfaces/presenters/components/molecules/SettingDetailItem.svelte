@@ -17,8 +17,10 @@
 				<i class="{ icon }"></i>
 			</div>
 			<div>
-				{ title }
-				<p class="font-medium text-sm text-gray-500">{ description }</p>
+				<div class="font-normal text-md">
+					{ title }
+				</div>
+				<p class="font-nomal text-sm text-gray-500">{ description }</p>
 			</div>
 		</div>
 		<div class="self-center pl-3">

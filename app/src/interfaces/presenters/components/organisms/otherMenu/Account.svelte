@@ -42,7 +42,7 @@
 		</h1>
 	</div>
 	<div>
-		<div class="py-3 px-4">
+		<div class="font-normal text-base py-3 px-4">
 			{ content }
 		</div>
 		<nav>

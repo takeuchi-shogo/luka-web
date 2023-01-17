@@ -9,11 +9,17 @@
 	export let user:User = null
 	export let isIdentification: boolean = false
 	export let isFollow: boolean = false
+	
+	export let isOpen:boolean = false
+
+	function isOpenProfileEditor() {
+		isOpen = !isOpen
+	}
 
 </script>
 
 
-<div class="flex">
+<div class="md:flex">
 	<div class="px-12">
 		<div class="w-48 h-48">
 			Icon
@@ -29,19 +35,17 @@
 				</div>
 				{ #if isIdentification }
 					<div class="pl-5 self-center">
-						<Button>
+						<Button on:click={ isOpenProfileEditor }>
 							<!-- <Label> -->
 								プロフィールを編集
 							<!-- </Label> -->
 						</Button>
 						
 					</div>
-					<div class="pl-2">
-						<div style="display: flex; align-items: center;">
-							<Button>
-								<i class="fa-solid fa-gear"></i>
-							</Button>
-						</div>
+					<div class="pl-2 self-center">
+						<Button type={ 'secondary' }>
+							<i class="fa-solid fa-gear text-sm"></i>
+						</Button>
 					</div>
 				{ :else }
 					{ #if isFollow }

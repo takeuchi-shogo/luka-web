@@ -74,11 +74,11 @@
 		</Route>
 
 		<Route path="/others">
-			<OtherIndex />
+			<OtherIndex bind:me={ me }/>
 		</Route>
 
 		<Route path="/others/:category" let:params>
-			<OtherIndex category={ params.category } />
+			<OtherIndex category={ params.category } bind:me={ me }/>
 		</Route>
 
 		<Route path="/profile">

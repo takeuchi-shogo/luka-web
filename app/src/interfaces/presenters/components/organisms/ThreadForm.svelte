@@ -48,17 +48,9 @@
 	<div class="">User Icon</div>
 	<!-- Modal Open Button -->
 	<div>
-		<button
-			class="text-sm text-gray-500 bg-pink-300 hover:opacity-75 font-medium px-4 py-2 text-center rounded"
-			on:click={ isOpen }
-		>
+		<Button on:click={ isOpen }>
 			投稿する
-		</button>
-		<!-- <Button on:click={ isOpen }>
-			<Label>
-				投稿する
-			</Label>
-		</Button> -->
+		</Button>
 	</div>
 </div>
 

@@ -7,15 +7,17 @@
 	import type User from 'domain/users'
 
 	import CommentListItem from '../CommentListItem.svelte'
-	import ThreadItem from '../ThreadItem.svelte'
+	import ProfileEditModal from './ui/ProfileEditModal.svelte'
+	import ThreadItem from '../thread/ThreadItem.svelte'
+	import ThreadList from '../thread/ThreadList.svelte'
 	import UserProfile from './UserProfile.svelte'
 	import UserTagBar from './UserTagBar.svelte'
 
 	export let me = null
+	export let isOpen:boolean = false
 
 	let user:User = null
 
-	let value
 
 	let initialized = false
 	let isIdentification: boolean = false
@@ -38,10 +40,23 @@
 
 </script>
 
+
+<style>
+
+</style>
+
+
+{ #if isOpen }
+	<ProfileEditModal me={ me } bind:isOpenModal={ isOpen } />
+{ /if }
 { #if initialized }
 	<div class="flex flex-col">
 		<div class="border-b-1">
-			<UserProfile bind:user={ user } bind:isIdentification={ isIdentification }/>
+			<UserProfile
+				bind:user={ user }
+				bind:isIdentification={ isIdentification }
+				bind:isOpen={ isOpen }
+			/>
 		</div>
 		<div class="border-b-1">
 			<UserTagBar bind:param={ user.screenName }/>
@@ -49,7 +64,7 @@
 		<div>
 			<Router>
 				<Route path="/">
-					Thread List
+					<ThreadList userId={ user.id }/>
 				</Route>
 				<Route path="threads_and_comments">
 					<CommentListItem/>
