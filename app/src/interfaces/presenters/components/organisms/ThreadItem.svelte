@@ -1,20 +1,66 @@
 
 <script lang="ts">
-	import type Thread from 'domain/threads'
+
+	// import Button, { Label } from '@smui/button'
+	import ThreadRepository from 'interfaces/database/thread_repository'
+
+	import type Thread from 'models/threads'
+
+	import Button from '../atoms/buttons/Button.svelte'
+	import ThreadMenuModal from './thread/ui/ThreadMenuModal.svelte'
+
 
 	export let thread:Thread = null
+	// export let threadId:number = 0
+
+	const _thread = new ThreadRepository
+
+	let errorMessage:string = ''
+
+	let isOpenModal:boolean = false
+
+
+	function isOpen() {
+		isOpenModal = !isOpenModal
+	}
+
+
+	function remove() {
+		_thread.delete(thread.id, (error, message) => {
+			if (error) {
+				console.log(message)
+				errorMessage = message
+				return
+			}
+			window.location.href = '/threads'
+		})
+	}
 	
 </script>
 
 
+{ #if isOpenModal }
+	<ThreadMenuModal bind:isOpenModal />
+{ /if }
 <div class="pt-8 sm:flex group">
 	<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
 		<!-- <img class="w-full rounded-md h-32 lg:w-32 object-cover" src="/public/img/BotIcon.jpeg" alt="sample icon"> -->
 	</div>
 	<div>
-		<div class="text-sm">{ thread.user.displayName }  <span class="text-gray-500">{ thread.formatCreatedAt }</span></div>
+		<div class="flex justify-between">
+			<div class="text-sm">
+				{ thread.user.displayName }  <span class="text-gray-500">{ thread.formatCreatedAt }</span>
+			</div>
+			<div>
+				<Button type={ 'light' } on:click={ isOpen }>
+					<span class="text-sm">
+						<i class="fa-solid fa-ellipsis-vertical"></i>
+					</span>
+				</Button>
+			</div>
+		</div>
 		<h2 class="mt-3 font-medium leading-6">{ thread.title }</h2>
-		<p class="mt-2 text-lg text-gray-500">{ thread.description }</p>
+		<p class="mt-2 text-base font-normal text-gray-500">{ thread.description }</p>
 		<div class="pt-8">
 			<div class="flex items-center justify-between text-slate-500">
 				<div class="flex space-x-4 md:space-x-8">

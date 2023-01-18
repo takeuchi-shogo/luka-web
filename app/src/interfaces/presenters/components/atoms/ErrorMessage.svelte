@@ -1,11 +1,11 @@
 
 <script lang="ts">
 
-	export let errorMessage:string = ''
+	export let message:string = ''
 
 </script>
 
 
-<div class={ $$props.class }>
-	{ errorMessage }
+<div class="text-red-500 font-semibold text-base">
+	{ message }
 </div>

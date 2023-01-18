@@ -1,3 +1,0 @@
-<div>
-	Notification Page
-</div>

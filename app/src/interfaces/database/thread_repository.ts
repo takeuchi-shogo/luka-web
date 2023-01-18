@@ -1,8 +1,8 @@
 
 import { forEach } from 'lodash'
 
-import Thread from 'domain/threads'
-import api from 'infrastructure/api'
+import Thread from 'models/threads'
+import api from 'api/api'
 
 
 class ThreadRepository {
@@ -49,6 +49,29 @@ class ThreadRepository {
 			callback(error, message, new Thread(data))
 		})
 	}
+
+
+	save(id: number, params: Object, callback:(error, message, data) => any) {
+		this._api.patch('/threads/' + id, params, (error, message, data) => {
+			if (error) {
+				callback(error, message, new Thread(null))
+				return
+			}
+			callback(error, message, new Thread(data))
+		})
+	}
+
+
+	delete(id:number, callback: (error: any, message: string) => any) {
+		this._api.delete('/threads/' + id, null, (error, message, _data) => {
+			if (error) {
+				callback(error, message)
+				return
+			}
+			callback(error, message)
+		})
+	}
+
 }
 
 

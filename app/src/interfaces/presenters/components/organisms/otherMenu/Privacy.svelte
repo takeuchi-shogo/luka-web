@@ -1,3 +1,0 @@
-<div>
-	Privacy Page
-</div>

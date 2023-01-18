@@ -3,7 +3,7 @@
 
 	import { createEventDispatcher } from 'svelte'
 
-	import SigninForm from "interfaces/presenters/components/organisms/SigninForm.svelte"
+	import SigninForm from "interfaces/presenters/components/organisms/signin/SigninForm.svelte"
 
 	const _dispatch = createEventDispatcher()
 

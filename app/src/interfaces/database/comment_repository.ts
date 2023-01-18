@@ -1,8 +1,8 @@
 
 import { forEach } from 'lodash'
 
-import Comment from 'domain/comments'
-import api from 'infrastructure/api'
+import Comment from 'models/comments'
+import api from 'api/api'
 
 
 class CommentRepository {

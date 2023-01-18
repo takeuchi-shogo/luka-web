@@ -1,6 +1,6 @@
 <script lang="ts">
 
-	import { onMount } from 'svelte'
+	// import { onMount } from 'svelte'
 
 	import MeRepository from 'interfaces/database/me_repository'
 
@@ -8,34 +8,34 @@
 
 	const _me = new MeRepository
 
-	let params = {
-		screenName : '',
-		password : '',
-	}
+	// let params = {
+	// 	screenName : '',
+	// 	password : '',
+	// }
 
-	let errorMessage: string = ''
+	// let errorMessage: string = ''
 
 
-	function signin(event) {
+	// function signin(event) {
 		// _me.signin(event.detail.params, (error, message, data) => {
 		// 	if (error) {
 		// 		errorMessage = message
 		// 		return
 		// 	}
-		// 	window.location.href = '/home'
+		// 	window.location.href = '/threads'
 		// })
-	}
+	// }
 
-	function init() {
-		console.log('signin')
-	}
+	// function init() {
+	// 	console.log('signin')
+	// }
 
 
-	onMount(() => {
-		init()
-	})
+	// onMount(() => {
+	// 	init()
+	// })
 
 </script>
 
-{ errorMessage }
-<Siginin on:signin={ signin }/>
+<!-- { errorMessage } -->
+<Siginin/>

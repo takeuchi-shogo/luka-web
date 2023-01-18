@@ -5,7 +5,7 @@
 
 	import ThreadRepository from 'interfaces/database/thread_repository'
 	import ThreadSingle from 'interfaces/presenters/components/templates/ThreadSingle.svelte'
-	import type Thread from 'domain/threads'
+	import type Thread from 'models/threads'
 
 	const _thread = new ThreadRepository
 
