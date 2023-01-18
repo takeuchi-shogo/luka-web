@@ -4,7 +4,7 @@
 	// import Button, { Label } from '@smui/button'
 	import ThreadRepository from 'interfaces/database/thread_repository'
 
-	import type Thread from 'domain/threads'
+	import type Thread from 'models/threads'
 
 	import Button from '../atoms/buttons/Button.svelte'
 	import ThreadMenuModal from './thread/ui/ThreadMenuModal.svelte'

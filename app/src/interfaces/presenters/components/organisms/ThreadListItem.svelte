@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type Thread from 'domain/threads'
+    import type Thread from 'models/threads'
 
 	// import ThreadHeader from 'src/interfaces/presenters/molecules/ThreadHeader.svelte'
 	// import ThreadContent from 'src/interfaces/presenters/molecules/ThreadContent.svelte'

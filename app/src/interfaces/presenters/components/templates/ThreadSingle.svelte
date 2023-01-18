@@ -3,7 +3,7 @@
 
 	import ThreadItem from 'interfaces/presenters/components/organisms/ThreadItem.svelte'
 	import CommentListItem from 'interfaces/presenters/components/organisms/CommentListItem.svelte'
-	import type Thread from 'domain/threads'
+	import type Thread from 'models/threads'
 
 	export let thread:Thread = null
 

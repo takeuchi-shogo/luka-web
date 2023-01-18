@@ -1,6 +1,6 @@
 <script lang="ts">
 
-	import type User from 'domain/users'
+	import type User from 'models/users'
 	import Button from '../../atoms/buttons/Button.svelte'
 	// import Button, { Label } from '@smui/button'
 	// import IconButton from '@smui/icon-button'

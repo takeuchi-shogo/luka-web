@@ -3,7 +3,7 @@
 
 	import { Link } from 'svelte-routing'
 
-	import type Thread from 'domain/threads'
+	import type Thread from 'models/threads'
 
 	export let thread:Thread
 

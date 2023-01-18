@@ -2,7 +2,7 @@
 import axios, { AxiosResponse } from 'axios'
 import cookie from 'js-cookie'
 
-import config from 'infrastructure/config'
+import config from 'config/config'
 import { forEach } from 'lodash'
 
 class Api{

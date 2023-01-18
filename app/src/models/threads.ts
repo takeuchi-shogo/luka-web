@@ -2,8 +2,8 @@
 import { forEach } from 'lodash'
 
 
-import User from 'domain/users'
-import Comment from 'domain/comments'
+import User from 'models/users'
+import Comment from 'models/comments'
 
 import { formatDate } from 'utils/format'
 

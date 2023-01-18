@@ -4,7 +4,7 @@
 
 	import { Router, Route } from 'svelte-routing'
 
-	import type User from 'domain/users'
+	import type User from 'models/users'
 
 	import CommentListItem from '../CommentListItem.svelte'
 	import ProfileEditModal from './ui/ProfileEditModal.svelte'

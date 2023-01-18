@@ -13,7 +13,7 @@
 	import ModalFooter from 'interfaces/presenters/components/atoms/modals/ModalFooter.svelte'
 	import ModalHeader from 'interfaces/presenters/components/atoms/modals/ModalHeader.svelte'
 	
-	import type Thread from 'domain/threads'
+	import type Thread from 'models/threads'
 
 
 	const _thread = new ThreadRepository

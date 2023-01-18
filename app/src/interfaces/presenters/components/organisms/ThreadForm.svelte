@@ -6,7 +6,7 @@
 
 	import Button from '../atoms/buttons/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
-	import type User from 'domain/users'
+	import type User from 'models/users'
 	import ErrorMessage from '../atoms/ErrorMessage.svelte'
     import ModalContainer from '../atoms/modals/ModalContainer.svelte';
     import ModalCard from '../atoms/modals/ModalCard.svelte';
