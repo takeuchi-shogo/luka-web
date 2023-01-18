@@ -1,17 +1,17 @@
 
 <script lang="ts">
 
-	import Thread from 'interfaces/database/thread_repository'
+	import Article from 'interfaces/database/article_repository'
 
 	import ModalCard from 'interfaces/presenters/components/atoms/modals/ModalCard.svelte'
 	import ModalContainer from 'interfaces/presenters/components/atoms/modals/ModalContainer.svelte'
 	import ModalContent from 'interfaces/presenters/components/atoms/modals/ModalContent.svelte'
 
 
-	const _thread = new Thread
+	const _article = new Article
 
 	export let isOpenModal:boolean = false
-	export let threadId:number = 0
+	export let articleId:number = 0
 
 	let errorMessage:string = ''
 
@@ -19,7 +19,7 @@
 
 
 	function remove() {
-		_thread.delete(threadId, (error, message) => {
+		_article.delete(articleId, (error, message) => {
 			if (error) {
 				errorMessage = message
 				return

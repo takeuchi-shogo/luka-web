@@ -3,7 +3,7 @@
 
 	import { onMount } from 'svelte'
 
-	import ThreadRepository from 'interfaces/database/thread_repository'
+	import ArticleRepository from 'interfaces/database/article_repository'
 
 	import Button from 'interfaces/presenters/components/atoms/buttons/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
@@ -13,12 +13,12 @@
 	import ModalFooter from 'interfaces/presenters/components/atoms/modals/ModalFooter.svelte'
 	import ModalHeader from 'interfaces/presenters/components/atoms/modals/ModalHeader.svelte'
 	
-	import type Thread from 'models/threads'
+	import type Article from 'models/articles'
 
 
-	const _thread = new ThreadRepository
+	const _article = new ArticleRepository
 
-	export let thread:Thread = null
+	export let article:Article = null
 	export let isOpenModal: boolean = false
 
 	let params = {
@@ -29,12 +29,12 @@
 
 
 	function init() {
-		params = thread
+		params = article
 	}
 
 
 	function save() {
-		_thread.save(thread.id, params, (error, message, data) => {
+		_article.save(article.id, params, (error, message, data) => {
 			if (error) {
 				errorMessage = message
 				return

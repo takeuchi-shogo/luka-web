@@ -3,6 +3,8 @@
 
 	import { Route } from 'svelte-routing'
 
+	import ArticleIndex from 'interfaces/presenters/pages/articles/Index.svelte'
+	import ArticleSingle from 'interfaces/presenters/pages/articles/Single.svelte'
 	import UserSingle from 'interfaces/presenters/pages/users/Single.svelte'
 	import CommentSingle from 'interfaces/presenters/pages/comment/Single.svelte'
 	import CommingSoon from 'interfaces/presenters/CommingSoon.svelte'
@@ -11,8 +13,7 @@
 	import TopIndex from 'interfaces/presenters/pages/top/Index.svelte'
 	import SigninIndex from 'interfaces/presenters/pages/signin/Index.svelte'
 	import SignupIndex from 'interfaces/presenters/pages/signup/Index.svelte'
-	import ThreadIndex from 'interfaces/presenters/pages/thread/Index.svelte'
-	import ThreadSingle from 'interfaces/presenters/pages/thread/Single.svelte'
+
 
 	export let me = null
 
@@ -52,6 +53,14 @@
 
 	{ :else }
 
+		<Route path="/articles">
+			<ArticleIndex bind:me={ me } />
+		</Route>
+
+		<Route path="/Articles/:id" let:params>
+			<ArticleSingle id={ params.id } />
+		</Route>
+
 		<!-- <Route path="/:screenName">
 			<UserSingle bind:me={ me }/>
 		</Route> -->
@@ -87,14 +96,6 @@
 
 		<Route path="/search">
 			<CommingSoon />
-		</Route>
-		
-		<Route path="/threads">
-			<ThreadIndex bind:me={ me } />
-		</Route>
-
-		<Route path="/threads/:id" let:params>
-			<ThreadSingle id={ params.id } />
 		</Route>
 
 	{ /if }

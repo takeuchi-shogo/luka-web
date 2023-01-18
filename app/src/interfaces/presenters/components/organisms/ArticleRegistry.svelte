@@ -2,7 +2,7 @@
 
 	import { fade } from 'svelte/transition'
 
-	import ThreadRepository from 'interfaces/database/thread_repository'
+	import ArticleRepository from 'interfaces/database/article_repository'
 
 	import Button from '../atoms/buttons/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
@@ -14,7 +14,7 @@
     import ModalContent from '../atoms/modals/ModalContent.svelte';
     import ModalFooter from '../atoms/modals/ModalFooter.svelte';
 
-	const _thread = new ThreadRepository
+	const _article = new ArticleRepository
 
 	export let me: User = null
 
@@ -36,7 +36,7 @@
 
 	function post() {
 		params.userId = me.id
-		_thread.post(params, (error, message, data) => {
+		_article.post(params, (error, message, data) => {
 			if (error) {
 				errorMessage = message
 				return

@@ -2,33 +2,33 @@
 
 	import { onMount } from 'svelte'
 
-	import ThreadRepository from 'interfaces/database/thread_repository'
+	import ArticleRepository from 'interfaces/database/article_repository'
 	
-	import ThreadList from 'interfaces/presenters/components/templates/ThreadList.svelte'
+	import ArticleList from 'interfaces/presenters/components/templates/ArticleList.svelte'
 
-	const _thread = new ThreadRepository
+	const _article = new ArticleRepository
 
 	export let me = null
 
-	let threads = []
+	let articles = []
 
 	let errorMessage = ''
 
 
 	function init() {
-		_thread.getList(null, (error, message, data) => {
+		_article.getList(null, (error, message, data) => {
 			if (error) {
 				errorMessage = message
 				return
 			}
-			threads = data.lists
+			articles = data.lists
 		})
 	}
 
 
 	function post(e) {
 		// console.log('post data', e.detail)
-		_thread.post(e.detail, (error, message, _data) => {
+		_article.post(e.detail, (error, message, _data) => {
 			if (error) {
 				errorMessage = message
 				console.log(errorMessage)
@@ -46,4 +46,4 @@
 </script>
 
 { errorMessage }
-<ThreadList bind:threads bind:me={ me } on:post={ post } />
+<ArticleList bind:articles bind:me={ me } on:post={ post } />

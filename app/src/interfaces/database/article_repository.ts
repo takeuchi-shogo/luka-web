@@ -1,11 +1,11 @@
 
 import { forEach } from 'lodash'
 
-import Thread from 'models/threads'
+import Article from 'models/articles'
 import api from 'api/api'
 
 
-class ThreadRepository {
+class ArticleRepository {
 
 	_api: api
 
@@ -15,25 +15,25 @@ class ThreadRepository {
 
 
 	get(id: string, callback: (error: any, message: string, data: any) => any) {
-		this._api.get('/threads/' + id, null, (error, message, data) => {
+		this._api.get('/articles/' + id, null, (error, message, data) => {
 			if (error) {
-				callback(error, message, new Thread(null))
+				callback(error, message, new Article(null))
 				return
 			}
-			callback(error, message, new Thread(data))
+			callback(error, message, new Article(data))
 		})
 	}
 
 
 	getList(params: Object, callback: (error: any, message: string, data: any) => any) {
-		this._api.get('/threads', params, (error, message, data) => {
+		this._api.get('/articles', params, (error, message, data) => {
 			let lists = []
 			if (error) {
 				callback(error, message, { lists: lists })
 				return
 			}
 			forEach(data.lists, (list) => {
-				lists.push(new Thread(list))
+				lists.push(new Article(list))
 			})
 			callback(error, message, { lists: lists })
 		})
@@ -41,29 +41,29 @@ class ThreadRepository {
 
 
 	post(params: Object, callback: (error: any, message: string, data: any) => void) {
-		this._api.post('/threads', params, (error, message, data) => {
+		this._api.post('/articles', params, (error, message, data) => {
 			if (error) {
-				callback(error, message, new Thread(null))
+				callback(error, message, new Article(null))
 				return
 			}
-			callback(error, message, new Thread(data))
+			callback(error, message, new Article(data))
 		})
 	}
 
 
 	save(id: number, params: Object, callback:(error, message, data) => any) {
-		this._api.patch('/threads/' + id, params, (error, message, data) => {
+		this._api.patch('/articles/' + id, params, (error, message, data) => {
 			if (error) {
-				callback(error, message, new Thread(null))
+				callback(error, message, new Article(null))
 				return
 			}
-			callback(error, message, new Thread(data))
+			callback(error, message, new Article(data))
 		})
 	}
 
 
 	delete(id:number, callback: (error: any, message: string) => any) {
-		this._api.delete('/threads/' + id, null, (error, message, _data) => {
+		this._api.delete('/articles/' + id, null, (error, message, _data) => {
 			if (error) {
 				callback(error, message)
 				return
@@ -75,4 +75,4 @@ class ThreadRepository {
 }
 
 
-export default ThreadRepository
+export default ArticleRepository

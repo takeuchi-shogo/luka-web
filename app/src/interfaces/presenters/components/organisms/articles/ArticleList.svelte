@@ -3,23 +3,23 @@
 
 	import { onMount } from 'svelte'
 
-	import Thread from './../../../../database/thread_repository'
-	import ThreadItem from './ThreadItem.svelte'
+	import Article from '../../../../database/article_repository'
+	import ArticleItem from './ArticleItem.svelte'
 
-	const _thread = new Thread
+	const _article = new Article
 
 	export let userId:number = 0
 
-	let threads = []
+	let articles = []
 
 	let initialized:boolean = false
 
 	function init() {
-		_thread.getList({ userId: userId }, (error, message, data) => {
+		_article.getList({ userId: userId }, (error, message, data) => {
 			if (error) {
 				return
 			}
-			threads = data.lists
+			articles = data.lists
 			initialized = true
 		})
 	}
@@ -37,8 +37,8 @@
 
 { #if initialized }
 	<div>
-		{ #each threads as thread }
-			<ThreadItem bind:thread />
+		{ #each articles as article }
+			<ArticleItem bind:article />
 		{ :else }
 			<div>まだ記事を作成していません</div>
 		{ /each }

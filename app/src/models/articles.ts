@@ -7,7 +7,7 @@ import Comment from 'models/comments'
 
 import { formatDate } from 'utils/format'
 
-class Thread {
+class Article {
 
 	id: number
 
@@ -74,4 +74,4 @@ class Thread {
 	}
 }
 
-export default Thread
+export default Article

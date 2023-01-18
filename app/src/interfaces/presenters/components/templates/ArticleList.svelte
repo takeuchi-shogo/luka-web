@@ -4,15 +4,15 @@
 
 	import { Link } from 'svelte-routing'
 
-	import ThreadListItem from 'interfaces/presenters/components/organisms/ThreadListItem.svelte'
-	import ThreadForm from 'interfaces/presenters/components/organisms/ThreadForm.svelte'
+	import ArticleListItem from 'interfaces/presenters/components/organisms/ArticleListItem.svelte'
+	import ArticleForm from 'interfaces/presenters/components/organisms/ArticleRegistry.svelte'
 
 	const _dispatch = createEventDispatcher()
 
 	export let me = null
-	export let threads = []
+	export let articles = []
 
-	let threadId: number = 10
+	let articleId: number = 10
 
 
 	function post(e) {
@@ -25,15 +25,15 @@
 <div class="flex flex-col flex-grow mx-8 px-4">
 	<div class="py-4">
 		<h1 class="text-xl font-bold">
-			Thread List Page
+			Article List Page
 		</h1>
 	</div>
 	<div class="py-4">
-		<ThreadForm bind:me={ me } on:post={ post } />
+		<ArticleForm bind:me={ me } on:post={ post } />
 	</div>
-	{ #each threads as thread }
-		<Link to="/threads/{ thread.id }">
-			<ThreadListItem bind:thread />
+	{ #each articles as article }
+		<Link to="/articles/{ article.id }">
+			<ArticleListItem bind:article />
 		</Link>
 	{/each}
 </div>
