@@ -2,10 +2,14 @@
 
 	import { Link } from 'svelte-routing'
 
+	import MeRepository from 'interfaces/database/me_repository'
+
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 	import Button from '../../atoms/buttons/Button.svelte'
 
-	export const me = null
+	const _me = new MeRepository
+
+	export let me = null
 	
 	let types = {
 		password: 'password',
@@ -30,51 +34,60 @@
 	}
 
 	let sessionsCnt: number = 4
+	let errorMessage: string = ''
 
 
 	function save() {
-		console.log(params)
+		_me.save(params, (error, message, _data) => {
+			if (error) {
+				errorMessage = message
+				return
+			}
+			console.log('success')
+		})
 	}
 
 </script>
 
 
-<div class="w-full">
-	<div class="h-14 flex items-center px-4">
-		<div class="w-12 items-center">
+{ #if me }
+	<div class="w-full">
+		<div class="h-14 flex items-center px-4">
+			<div class="w-12 items-center">
+				<div>
+					<Link to="/others/accounts">
+						<i class="fa-solid fa-arrow-left"></i>
+					</Link>
+				</div>
+			</div>
 			<div>
-				<Link to="/others/accounts">
-					<i class="fa-solid fa-arrow-left"></i>
-				</Link>
+				<h1 class="font-bold">Password Page</h1>
 			</div>
 		</div>
 		<div>
-			<h1 class="font-bold">Password Page</h1>
-		</div>
-	</div>
-	<div>
-		<div class="px-4 py-3">
-			<FormInput type={ types.password } label={ labels.oldPassword } bind:value={ params.oldPassword }/>
-			<div class="font-light text-sm text-gray-500 hover:opacity-75 pb-4 border-b-2 border-gray-100">
-				<Link to="/others/password/reset">パスワードをお忘れですか？</Link>
+			<div class="px-4 py-3">
+				<FormInput type={ types.password } label={ labels.oldPassword } bind:value={ params.oldPassword }/>
+				<div class="font-light text-sm text-gray-500 hover:opacity-75 pb-4 border-b-2 border-gray-100">
+					<Link to="/accounts/password_reset">パスワードをお忘れですか？</Link>
+				</div>
+			</div>
+			<div class="px-4 py-3">
+				<FormInput type={ types.password } label={ labels.newPassword } bind:value={ params.newPassword }/>
+			</div>
+			<div class="px-4 py-3">
+				<FormInput type={ types.password } label={ labels.checkPassword } bind:value={ params.checkPassword }/>
 			</div>
 		</div>
 		<div class="px-4 py-3">
-			<FormInput type={ types.password } label={ labels.newPassword } bind:value={ params.newPassword }/>
+			<p class="text-gray-500 font-light text-sm">
+				パスワードを変更すると、現在使っているセッションを除く、アクティブなLukaセッション全てからログアウトされます。
+				アカウントにアクセスしている<Link to="/others/sessions">{ sessionsCnt }件のアプリケーション</Link>に影響はありません
+			</p>
 		</div>
 		<div class="px-4 py-3">
-			<FormInput type={ types.password } label={ labels.checkPassword } bind:value={ params.checkPassword }/>
+			<Button on:click={ save }>
+				保存する
+			</Button>
 		</div>
 	</div>
-	<div class="px-4 py-3">
-		<p class="text-gray-500 font-light">
-			パスワードを変更すると、現在使っているセッションを除く、アクティブなLukaセッション全てからログアウトされます。
-			アカウントにアクセスしている<Link to="/others/sessions">{ sessionsCnt }件のアプリケーション</Link>に影響はありません
-		</p>
-	</div>
-	<div class="px-4 py-3">
-		<Button on:click={ save }>
-			保存する
-		</Button>
-	</div>
-</div>
+{ /if }

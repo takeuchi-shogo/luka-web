@@ -14,8 +14,6 @@
 	export let me = null
 	export let category = ''
 
-	$: {console.log(me)}
-
 </script>
 
 

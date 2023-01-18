@@ -7,10 +7,10 @@
 
 
 	let links = [
-		{ link: '/threads', icon: 'fa-solid fa-house', title: '投稿' },
-		{ link: '/search', icon: 'fa-solid fa-magnifying-glass', title: '検索' },
-		{ link: '/communities', icon: 'fa-solid fa-users', title: 'コミュニティ' },
-		{ link: '/messages', icon: 'fa-solid fa-comment-dots', title: 'メッセージ' },
+		{ link: '/threads', icon: 'fa-solid fa-paper-plane', title: '投稿' },
+		// { link: '/search', icon: 'fa-solid fa-magnifying-glass', title: '検索' },
+		// { link: '/communities', icon: 'fa-solid fa-users', title: 'コミュニティ' },
+		// { link: '/messages', icon: 'fa-solid fa-comment-dots', title: 'メッセージ' },
 		{ link: '/' + me.screenName, icon: 'fa-regular fa-user', title: 'プロフィール' },
 		{ link: '/others/accounts', icon: 'fa-solid fa-gear', title: 'その他' },
 	]

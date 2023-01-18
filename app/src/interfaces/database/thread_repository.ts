@@ -51,6 +51,17 @@ class ThreadRepository {
 	}
 
 
+	save(id: number, params: Object, callback:(error, message, data) => any) {
+		this._api.patch('/threads/' + id, params, (error, message, data) => {
+			if (error) {
+				callback(error, message, new Thread(null))
+				return
+			}
+			callback(error, message, new Thread(data))
+		})
+	}
+
+
 	delete(id:number, callback: (error: any, message: string) => any) {
 		this._api.delete('/threads/' + id, null, (error, message, _data) => {
 			if (error) {
@@ -60,6 +71,7 @@ class ThreadRepository {
 			callback(error, message)
 		})
 	}
+
 }
 
 
