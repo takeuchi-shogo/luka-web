@@ -1,19 +1,19 @@
 <script lang="ts">
 
-	import SettingDetailHeader from '../../molecules/SettingDetailHeader.svelte'
-	import SettingDetailItem from '../../molecules/SettingDetailItem.svelte'
+	import SettingDetailHeader from 'interfaces/presenters/components/molecules/SettingDetailHeader.svelte'
+	import SettingDetailItem from 'interfaces/presenters/components/molecules/SettingDetailItem.svelte'
 
 	let content: string = 'アクティビティ、興味関心、おすすめについて受け取る通知の種類を選択します。'
 
 	let notificationLinks = [
 		{
-			to: '/others/filters',
+			to: '/settings/filters',
 			icon: '',
 			title: 'フィルター',
 			description: '表示する通知と表示しない通知を選択してください',
 		},
 		{
-			to: '/others/preferences',
+			to: '/settings/preferences',
 			icon: '',
 			title: '設定',
 			description: '通知の種類ごとに設定を選択してください。',

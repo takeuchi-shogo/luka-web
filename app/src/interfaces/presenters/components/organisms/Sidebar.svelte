@@ -12,7 +12,7 @@
 		// { link: '/communities', icon: 'fa-solid fa-users', title: 'コミュニティ' },
 		// { link: '/messages', icon: 'fa-solid fa-comment-dots', title: 'メッセージ' },
 		{ link: '/' + me.screenName, icon: 'fa-regular fa-user', title: 'プロフィール' },
-		{ link: '/others/accounts', icon: 'fa-solid fa-gear', title: 'その他' },
+		{ link: '/settings/accounts', icon: 'fa-solid fa-gear', title: 'その他' },
 	]
 
 </script>
@@ -29,80 +29,6 @@
 					<SideMenuItem link={ li.link } icon={ li.icon } title={ li.title } />
 				{ /each }
 			</div>
-			<!-- <ul class="font-semibold">
-				<li>
-					<div class="p-3">
-						<Link to="/threads" class="flex">
-							<div class="p-3">
-								<i class="fa-solid fa-house"></i>
-							</div>
-							<div class="self-center">
-								投稿
-							</div>
-						</Link>
-					</div>
-				</li>
-				<li>
-					<div class="p-3">
-						<Link to="/search" class="flex">
-							<div class="p-3">
-								<i class="fa-solid fa-magnifying-glass"></i>
-							</div>
-							<div class="self-center">
-								検索
-							</div>
-						</Link>
-					</div>
-				</li>
-				<li>
-					<div class="p-3">
-						<Link to="/communities" class="flex">
-							<div class="p-3">
-								<i class="fa-solid fa-users"></i>
-							</div>
-							<div class="self-center">
-								コミュニティ
-							</div>
-						</Link>
-					</div>
-				</li>
-				<li>
-					<div class="p-3">
-						<Link to="/messages" class="flex">
-							<div class="p-3">
-								<i class="fa-solid fa-comment-dots"></i>
-							</div>
-							<div class="self-center">
-								メッセージ
-							</div>
-						</Link>
-					</div>
-				</li>
-				<li>
-					<div class="p-3">
-						<Link to="/profile" class="flex">
-							<div class="p-3">
-								<i class="fa-regular fa-user"></i>
-							</div>
-							<div class="self-center">
-								プロフィール
-							</div>
-						</Link>
-					</div>
-				</li>
-				<li>
-					<div class="p-3">
-						<Link to="/others/accounts" class="flex">
-							<div class="p-3">
-								<i class="fa-solid fa-gear"></i>
-							</div>
-							<div class="self-center">
-								その他
-							</div>
-						</Link>
-					</div>
-				</li>
-			</ul> -->
 		</nav>
 	</div>
 </div>

@@ -1,20 +1,20 @@
 
 <script lang="ts">
 
-	import SettingDetailHeader from '../../molecules/SettingDetailHeader.svelte'
-    import SettingDetailItem from '../../molecules/SettingDetailItem.svelte';
+	import SettingDetailHeader from 'interfaces/presenters/components/molecules/SettingDetailHeader.svelte'
+    import SettingDetailItem from 'interfaces/presenters/components/molecules/SettingDetailItem.svelte';
 
 	let content: string = 'アカウントのセキュリティを管理したり、アカウントと連携したアプリなどのアカウントによる使用を追跡したりします。'
 
 	let securityLinks = [
 		{
-			to: '/others/security',
+			to: '/settings/security',
 			icon: '',
 			title: 'セキュリティー',
 			description: 'アカウントのセキュリティを管理します。',
 		},
 		{
-			to: '/others/apps_and_sessions',
+			to: '/settings/apps_and_sessions',
 			icon: '',
 			title: 'アプリとセッション',
 			description: 'アカウントのセキュリティを管理します。',

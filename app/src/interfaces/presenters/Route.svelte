@@ -6,7 +6,7 @@
 	import UserSingle from 'interfaces/presenters/pages/users/Single.svelte'
 	import CommentSingle from 'interfaces/presenters/pages/comment/Single.svelte'
 	import CommingSoon from 'interfaces/presenters/CommingSoon.svelte'
-	import OtherIndex from 'interfaces/presenters/pages/other/Index.svelte'
+	import OtherIndex from 'interfaces/presenters/pages/settings/Index.svelte'
 	import ProfileIndex from 'interfaces/presenters/pages/profile/Index.svelte'
 	import TopIndex from 'interfaces/presenters/pages/top/Index.svelte'
 	import SigninIndex from 'interfaces/presenters/pages/signin/Index.svelte'
@@ -73,11 +73,11 @@
 			<CommingSoon />
 		</Route>
 
-		<Route path="/others">
+		<Route path="/settings">
 			<OtherIndex bind:me={ me }/>
 		</Route>
 
-		<Route path="/others/:category" let:params>
+		<Route path="/settings/:category" let:params>
 			<OtherIndex category={ params.category } bind:me={ me }/>
 		</Route>
 

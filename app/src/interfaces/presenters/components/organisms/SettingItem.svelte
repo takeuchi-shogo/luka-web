@@ -1,14 +1,14 @@
 
 <script lang="ts">
-	import Account from 'interfaces/presenters/components/organisms/otherMenu/Account.svelte'
-	import Notification from 'interfaces/presenters/components/organisms/otherMenu/Notification.svelte'
-	import Privacy from 'interfaces/presenters/components/organisms/otherMenu/Privacy.svelte'
-	import Security from 'interfaces/presenters/components/organisms/otherMenu/Security.svelte'
-	import Setting from 'interfaces/presenters/components/organisms/otherMenu/Setting.svelte'
+	import Account from 'interfaces/presenters/components/organisms/settings/menu/Account.svelte'
+	import Notification from 'interfaces/presenters/components/organisms/settings/menu/Notification.svelte'
+	import Privacy from 'interfaces/presenters/components/organisms/settings/menu/Privacy.svelte'
+	import Security from 'interfaces/presenters/components/organisms/settings/menu/Security.svelte'
+	import Setting from 'interfaces/presenters/components/organisms/settings/menu/Setting.svelte'
 
-	import PasswordItem from 'interfaces/presenters/components/organisms/otherItem/Password.svelte'
-	import AccountEdit from 'interfaces/presenters/components/organisms/otherItem/AccountEdit.svelte'
-	import Deactivate from 'interfaces/presenters/components/organisms/otherItem/Deactivate.svelte'
+	import PasswordItem from 'interfaces/presenters/components/organisms/settings/detail/account/Password.svelte'
+	import AccountEdit from 'interfaces/presenters/components/organisms/settings/detail/account/AccountEdit.svelte'
+	import Deactivate from 'interfaces/presenters/components/organisms/settings/detail/account/Deactivate.svelte'
 
 
 	export let me = null

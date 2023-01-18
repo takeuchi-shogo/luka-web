@@ -11,7 +11,7 @@
 
 	import Button from "interfaces/presenters/components/atoms/buttons/LoginButton.svelte"
 	import FormInput from "interfaces/presenters/components/molecules/FormInput.svelte"
-	import SocialButton from '../atoms/buttons/SocialButton.svelte'
+	import SocialButton from 'interfaces/presenters/components/atoms/buttons/SocialButton.svelte'
 
 	// const _dispatch = createEventDispatcher()
 	const _me = new MeRepository

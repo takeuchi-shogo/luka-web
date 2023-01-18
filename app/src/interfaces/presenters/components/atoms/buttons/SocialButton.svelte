@@ -7,7 +7,7 @@
 	export let text: string = ''
 	export let type: string = ''
 
-	let google = "text-white"
+	let google = ""
 	let facebook = "text-white"
 	let github = "text-white"
 	let twitter = "text-white"
@@ -52,10 +52,10 @@
 </script>
 
 <button
-	class="{ type } outline-none py-3.5 px-4 border rounded-lg flex items-center w-full mt-4 transition duration-150 ease-in-out"
+	class="{ type } outline-none py-3.5 px-4 border rounded-lg flex justify-center items-center w-full mt-4 transition duration-150 ease-in-out"
 	on:click|preventDefault={ signin }
-	style="background-color: { style };"
+	style="color: { style };"
 	>
 	<slot></slot>
-	<p class="text-base font-medium ml-4 text-gray-200">{ text }</p>
+	<p class="text-base font-medium ml-4" style="color: { style };">{ text }</p>
 </button>

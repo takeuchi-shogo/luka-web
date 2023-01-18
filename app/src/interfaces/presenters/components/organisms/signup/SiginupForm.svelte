@@ -4,7 +4,7 @@
 	
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 	import Button from 'interfaces/presenters/components/atoms/buttons/LoginButton.svelte'
-    import FormSelect from '../molecules/FormSelect.svelte';
+    import FormSelect from '../../molecules/FormSelect.svelte';
 
 	const _dispatch = createEventDispatcher()
 
@@ -88,6 +88,8 @@
 		</div>
 	</div>
 	<div class="px-4 py-3">
-		<Button text={ '新規作成' } on:onClick={ signup } />
+		<Button on:onClick={ signup }>
+			新規作成
+		</Button>
 	</div>
 </form>

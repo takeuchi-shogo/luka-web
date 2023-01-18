@@ -2,25 +2,25 @@
 <script lang="ts">
 
 	import { onMount } from 'svelte'
-	import SettingDetailItem from '../../molecules/SettingDetailItem.svelte'
+	import SettingDetailItem from 'interfaces/presenters/components/molecules/SettingDetailItem.svelte'
 
 	let content: string = 'アカウントについての情報を確認したり、データのアーカイブをダウンロードしたり、アカウント停止オプションの詳細を確認したりできます'
 
 	let accountLinks = [
 		{
-			to: '/others/account_edit',
+			to: '/settings/account_edit',
 			icon: 'fa-solid fa-user',
 			title: 'アカウント情報を変更する',
 			description: '電話番号やメールアドレスなどのアカウント情報を確認できます',
 		},
 		{
-			to: '/others/password',
+			to: '/settings/password',
 			icon: 'fa-solid fa-key',
 			title: 'パスワードを変更する',
 			description: 'パスワードはいつでも変更できます',
 		},
 		{
-			to: '/others/deactivate',
+			to: '/settings/deactivate',
 			icon: 'fa-solid fa-heart-crack',
 			title: 'アカウント削除',
 			description: 'アカウントを削除する方法について説明します',

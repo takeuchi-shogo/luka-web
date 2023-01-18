@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-	import Select from 'interfaces/presenters/components/atoms/Select.svelte'
+	import Select from 'interfaces/presenters/components/atoms/inputs/Select.svelte'
 
 
 	// export let type: string = ''

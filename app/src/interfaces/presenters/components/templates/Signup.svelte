@@ -2,7 +2,7 @@
 
 	import { createEventDispatcher } from 'svelte'
 
-	import SiginupForm from 'interfaces/presenters/components/organisms/SiginupForm.svelte'
+	import SiginupForm from 'interfaces/presenters/components/organisms/signup/SiginupForm.svelte'
 
 	const _dispatch = createEventDispatcher()
 

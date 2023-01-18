@@ -5,7 +5,7 @@
 	import MeRepository from 'interfaces/database/me_repository'
 
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
-	import Button from '../../atoms/buttons/Button.svelte'
+	import Button from 'interfaces/presenters/components/atoms/buttons/Button.svelte'
 
 	const _me = new MeRepository
 

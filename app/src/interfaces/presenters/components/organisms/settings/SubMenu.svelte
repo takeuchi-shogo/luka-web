@@ -4,13 +4,13 @@
 	import SubMenuItem from 'interfaces/presenters/components/molecules/SubMenuItem.svelte'
 
 	let links = [
-		{ link: '/others/accounts', title: 'アカウント' },
-		{ link: '/others/security', title: 'セキュリティ' },
-		{ link: '/others/privacy', title: 'プライバシー' },
-		{ link: '/others/notifications', title: '通知設定' },
-		{ link: '/others/informations', title: 'お知らせ' },
-		{ link: '/others/columus', title: 'Lukaコラム' },
-		{ link: '/others/settings', title: 'その他の設定' },
+		{ link: '/settings/accounts', title: 'アカウント' },
+		{ link: '/settings/security', title: 'セキュリティ' },
+		{ link: '/settings/privacy', title: 'プライバシー' },
+		{ link: '/settings/notifications', title: '通知設定' },
+		{ link: '/settings/informations', title: 'お知らせ' },
+		{ link: '/settings/columus', title: 'Lukaコラム' },
+		{ link: '/settings/settings', title: 'その他の設定' },
 	]
 
 </script>

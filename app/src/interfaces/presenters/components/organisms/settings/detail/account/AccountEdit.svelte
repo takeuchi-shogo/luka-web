@@ -8,7 +8,7 @@
 
 	import Button from 'interfaces/presenters/components/atoms/buttons/Button.svelte'
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
-	import ErrorMessage from '../../atoms/ErrorMessage.svelte'
+	import ErrorMessage from 'interfaces/presenters/components/atoms/ErrorMessage.svelte'
 
 	const _me = new Me
 
