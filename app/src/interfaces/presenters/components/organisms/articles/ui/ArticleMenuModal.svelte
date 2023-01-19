@@ -15,7 +15,7 @@
 
 	let errorMessage:string = ''
 
-	let isOpenNestedModal:boolean = false
+	export let isOpenNestedModal:boolean = false
 
 
 	function remove() {
@@ -25,6 +25,7 @@
 				return
 			}
 			isOpenModal = false
+			window.location.href = '/articles'
 		})
 	}
 

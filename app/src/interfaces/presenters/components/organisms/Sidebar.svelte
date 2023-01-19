@@ -7,7 +7,7 @@
 
 
 	let links = [
-		{ link: '/threads', icon: 'fa-solid fa-paper-plane', title: '投稿' },
+		{ link: '/articles', icon: 'fa-solid fa-paper-plane', title: '投稿' },
 		// { link: '/search', icon: 'fa-solid fa-magnifying-glass', title: '検索' },
 		// { link: '/communities', icon: 'fa-solid fa-users', title: 'コミュニティ' },
 		// { link: '/messages', icon: 'fa-solid fa-comment-dots', title: 'メッセージ' },

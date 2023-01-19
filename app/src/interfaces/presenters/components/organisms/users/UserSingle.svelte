@@ -8,8 +8,8 @@
 
 	import CommentListItem from '../CommentListItem.svelte'
 	import ProfileEditModal from './ui/ProfileEditModal.svelte'
-	import ThreadItem from '../thread/ThreadItem.svelte'
-	import ThreadList from '../thread/ThreadList.svelte'
+	// import ArticleItem from 'interfaces/presenters/components/organisms/articles/ArticleItem.svelte'
+	import ArticleList from 'interfaces/presenters/components/organisms/articles/ArticleList.svelte'
 	import UserProfile from './UserProfile.svelte'
 	import UserTagBar from './UserTagBar.svelte'
 
@@ -64,7 +64,7 @@
 		<div>
 			<Router>
 				<Route path="/">
-					<ThreadList userId={ user.id }/>
+					<ArticleList userId={ user.id }/>
 				</Route>
 				<Route path="threads_and_comments">
 					<CommentListItem/>

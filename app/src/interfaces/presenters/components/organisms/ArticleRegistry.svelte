@@ -8,13 +8,15 @@
 	import FormInput from 'interfaces/presenters/components/molecules/FormInput.svelte'
 	import type User from 'models/users'
 	import ErrorMessage from '../atoms/ErrorMessage.svelte'
-    import ModalContainer from '../atoms/modals/ModalContainer.svelte';
-    import ModalCard from '../atoms/modals/ModalCard.svelte';
-    import ModalHeader from '../atoms/modals/ModalHeader.svelte';
-    import ModalContent from '../atoms/modals/ModalContent.svelte';
-    import ModalFooter from '../atoms/modals/ModalFooter.svelte';
+	import ModalContainer from '../atoms/modals/ModalContainer.svelte';
+	import ModalCard from '../atoms/modals/ModalCard.svelte';
+	import ModalHeader from '../atoms/modals/ModalHeader.svelte';
+	import ModalContent from '../atoms/modals/ModalContent.svelte';
+	import ModalFooter from '../atoms/modals/ModalFooter.svelte';
 
 	const _article = new ArticleRepository
+
+	export const didCreate = (article) => {}
 
 	export let me: User = null
 
@@ -41,6 +43,7 @@
 				errorMessage = message
 				return
 			}
+			didCreate(data)
 			isModalOpen = false
 		})
 	}
@@ -61,7 +64,7 @@
 
 <!-- Modal -->
 { #if isModalOpen }
-	<ModalContainer on:click={ isOpen }>
+	<ModalContainer>
 		<ModalCard>
 			<ModalHeader>
 				<h3 class="text-xl font-semibold text-gray-500">
@@ -77,6 +80,7 @@
 				</button>
 			</ModalHeader>
 			<ModalContent>
+				<ErrorMessage bind:message={ errorMessage } />
 				<div class="">
 					<FormInput type={ 'text' } label={ 'タイトル' } placeholder={ 'タイトルを入力してください' } bind:value={ params.title }/>
 				</div>

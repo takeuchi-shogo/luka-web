@@ -57,7 +57,7 @@
 			<ArticleIndex bind:me={ me } />
 		</Route>
 
-		<Route path="/Articles/:id" let:params>
+		<Route path="/articles/:id" let:params>
 			<ArticleSingle id={ params.id } />
 		</Route>
 

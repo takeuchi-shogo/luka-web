@@ -12,8 +12,9 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-		'domain': path.resolve('src/domain'),
-		'infrastructure': path.resolve('src/infrastructure'),
+		'models': path.resolve('src/models'),
+		'api': path.resolve('src/api'),
+		'config': path.resolve('src/config'),
 		'interfaces': path.resolve('src/interfaces'),
 		'lib': path.resolve('src/lib'),
 		'utils': path.resolve('src/utils')

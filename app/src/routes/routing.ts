@@ -4,7 +4,7 @@ import TopIndex from 'interfaces/presenters/pages/top/Index.svelte'
 
 export const routes = [
 	{
-		path: '',
+		path: '/',
 		component: TopIndex,
 	},
 	{

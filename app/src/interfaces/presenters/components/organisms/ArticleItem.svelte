@@ -8,20 +8,26 @@
 
 	import Button from '../atoms/buttons/Button.svelte'
 	import ArticleMenuModal from './articles/ui/ArticleMenuModal.svelte'
+	import ArticleEditModal from './articles/ui/ArticleEditModal.svelte'
 
 
-	export let article:Article = null
-	// export let threadId:number = 0
+	export let article: Article = null
 
 	const _article = new ArticleRepository
 
-	let errorMessage:string = ''
+	let errorMessage :string = ''
 
-	let isOpenModal:boolean = false
+	let isOpenModal: boolean = false
+	let isOpenNestedModal: boolean = false
 
 
 	function isOpen() {
 		isOpenModal = !isOpenModal
+	}
+
+
+	function update(updatedArticle) {
+		article = updatedArticle
 	}
 
 
@@ -40,13 +46,24 @@
 
 
 { #if isOpenModal }
-	<ArticleMenuModal bind:isOpenModal />
+	<ArticleMenuModal
+		bind:isOpenModal
+		bind:isOpenNestedModal
+		bind:articleId={ article.id }
+	/>
+{ /if }
+{ #if isOpenNestedModal }
+	<ArticleEditModal
+		bind:isOpenModal={ isOpenNestedModal }
+		bind:article
+		didSave={ update }
+	/>
 { /if }
 <div class="pt-8 sm:flex group">
 	<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
 		<!-- <img class="w-full rounded-md h-32 lg:w-32 object-cover" src="/public/img/BotIcon.jpeg" alt="sample icon"> -->
 	</div>
-	<div>
+	<div class="w-full">
 		<div class="flex justify-between">
 			<div class="text-sm">
 				{ article.user.displayName }  <span class="text-gray-500">{ article.formatCreatedAt }</span>

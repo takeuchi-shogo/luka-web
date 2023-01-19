@@ -26,17 +26,17 @@
 	}
 
 
-	function post(e) {
-		// console.log('post data', e.detail)
-		_article.post(e.detail, (error, message, _data) => {
-			if (error) {
-				errorMessage = message
-				console.log(errorMessage)
-				return
-			}
-			init()
-		})
-	}
+	// function post(e) {
+	// 	// console.log('post data', e.detail)
+	// 	_article.post(e.detail, (error, message, _data) => {
+	// 		if (error) {
+	// 			errorMessage = message
+	// 			console.log(errorMessage)
+	// 			return
+	// 		}
+	// 		init()
+	// 	})
+	// }
 
 
 	onMount(() => {
@@ -46,4 +46,4 @@
 </script>
 
 { errorMessage }
-<ArticleList bind:articles bind:me={ me } on:post={ post } />
+<ArticleList bind:articles bind:me={ me } />

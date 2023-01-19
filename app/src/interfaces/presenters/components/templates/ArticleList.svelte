@@ -5,14 +5,17 @@
 	import { Link } from 'svelte-routing'
 
 	import ArticleListItem from 'interfaces/presenters/components/organisms/ArticleListItem.svelte'
-	import ArticleForm from 'interfaces/presenters/components/organisms/ArticleRegistry.svelte'
+	import ArticleRegistry from 'interfaces/presenters/components/organisms/ArticleRegistry.svelte'
 
 	const _dispatch = createEventDispatcher()
 
 	export let me = null
 	export let articles = []
 
-	let articleId: number = 10
+
+	function addList(article) {
+		articles.push(article)
+	}
 
 
 	function post(e) {
@@ -29,11 +32,13 @@
 		</h1>
 	</div>
 	<div class="py-4">
-		<ArticleForm bind:me={ me } on:post={ post } />
+		<ArticleRegistry bind:me={ me } on:post={ post } didCreate={ addList } />
 	</div>
 	{ #each articles as article }
 		<Link to="/articles/{ article.id }">
 			<ArticleListItem bind:article />
 		</Link>
+	{ :else }
+		<div>何もないよ</div>
 	{/each}
 </div>

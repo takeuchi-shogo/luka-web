@@ -14,10 +14,12 @@
 	import ModalHeader from 'interfaces/presenters/components/atoms/modals/ModalHeader.svelte'
 	
 	import type Article from 'models/articles'
+	import ErrorMessage from 'interfaces/presenters/components/atoms/ErrorMessage.svelte'
 
 
 	const _article = new ArticleRepository
 
+	export let didSave = (article) => {}
 	export let article:Article = null
 	export let isOpenModal: boolean = false
 
@@ -39,6 +41,7 @@
 				errorMessage = message
 				return
 			}
+			didSave(article)
 			isOpenModal = false
 		})
 	}
@@ -78,6 +81,7 @@
 			</button>
 		</ModalHeader>
 		<ModalContent>
+			<ErrorMessage bind:message={ errorMessage } />
 			<div class="">
 				<FormInput type={ 'text' } label={ 'タイトル' } placeholder={ 'タイトルを入力してください' } bind:value={ params.title }/>
 			</div>
@@ -90,17 +94,15 @@
 			<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ params.description } placeholder="投稿内容を入力してください"></textarea>
 		</ModalContent>
 		<ModalFooter>
-			<div class="flex">
-				<div>
-					<Button on:click={ save }>
-						Save
-					</Button>
-				</div>
-				<div>
-					<Button on:click={ isOpen } type={ 'secondary' }>
-						Cancel
-					</Button>
-				</div>
+			<div>
+				<Button on:click={ save }>
+					Save
+				</Button>
+			</div>
+			<div>
+				<Button on:click={ isOpen } type={ 'secondary' }>
+					Cancel
+				</Button>
 			</div>
 		</ModalFooter>
 	</ModalCard>

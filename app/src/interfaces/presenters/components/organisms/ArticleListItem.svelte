@@ -11,7 +11,7 @@
 </script>
 
 
-<div class="py-4 hover:bg-gray-100 border-b">
+<div class="py-4 hover:bg-gray-100 border-b w-full">
 	<div class="pt-8 sm:flex group">
 		<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
 			<!-- <img class="w-full rounded-md h-32 lg:w-32 object-cover" src="public/img/BotIcon.jpeg" alt="sample icon"> -->
@@ -35,13 +35,13 @@
 							</svg>
 							<span>{ article.favoriteCnt }</span>
 						</div>
-						<div class="flex cursor-pointer items-center transition hover:text-slate-600">
+						<!-- <div class="flex cursor-pointer items-center transition hover:text-slate-600">
 							<i class="fa-solid fa-paper-plane"></i>
 							<span>2</span>
 						</div>
 						<div class="flex cursor-pointer items-center transition hover:text-slate-600">
 							<i class="fa-solid fa-chart-simple"></i>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
