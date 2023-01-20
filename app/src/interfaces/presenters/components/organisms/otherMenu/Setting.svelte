@@ -1,3 +1,0 @@
-<div>
-	Setting Page
-</div>

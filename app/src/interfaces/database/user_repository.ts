@@ -1,6 +1,6 @@
 
-import User from 'domain/users'
-import api from 'infrastructure/api'
+import User from 'models/users'
+import api from 'api/api'
 
 class user_repository {
 

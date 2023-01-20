@@ -1,16 +1,17 @@
 
 <script lang="ts">
-import Select from "../atoms/Select.svelte"
+
+	import Select from 'interfaces/presenters/components/atoms/inputs/Select.svelte'
 
 
-	export let type: string = ''
+	// export let type: string = ''
 	export let label: string = ''
 	export let value: string = ''
 	export let options = []
 
-	function typeAction(node) {
-		node.type = type
-	}
+	// function typeAction(node) {
+	// 	node.type = type
+	// }
 
 </script>
 
@@ -21,5 +22,5 @@ import Select from "../atoms/Select.svelte"
 	>
 		{ label }
 	</label>
-	<Select value={ value } options={ options } />
+	<Select bind:value={ value } options={ options } />
 </div>

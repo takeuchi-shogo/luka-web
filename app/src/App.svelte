@@ -14,18 +14,18 @@
 
 	let me = null
 
-	let initialized = false
+	// let initialized = false
 
 
 	function initialize() {
 		_me.get((error, message, data) => {
 			if (error) {
 				// initialized = false
-				window.location.href = '/signin'
+				// window.location.href = '/signin'
 				return
 			}
 			me = data
-			initialized = true
+			// initialized = true
 		})
 	}
 
@@ -39,7 +39,7 @@
 <!-- <TailwindCss /> -->
 
 <Router>
-	{ #if !initialized }
+	{ #if !me }
 		<Index />
 	{ :else }
 		<Dashboard bind:me={ me }/>

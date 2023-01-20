@@ -1,3 +1,0 @@
-<div>
-	Security Page
-</div>
