@@ -21,24 +21,24 @@ Atomic Design + clean architectureに可能な限り沿って書いていきた�
 - atoms
 	- UIパーツ。何にも依存しないmarginを持たないコンポーネント
 
-~ ### Clean Architectureについて ~
+~~ ### Clean Architectureについて ~~
 
-~ - domain ~
-	~ - いわゆるモデル層。プロパティの指定やデータをオブジェクトに入れる際に必要。 ~
+~~ - domain ~~
+	~~ - いわゆるモデル層。プロパティの指定やデータをオブジェクトに入れる際に必要。 ~~
 
-~ - infrastructure ~
-	- APIやConfigファイル、Oauthなど外部とのやりとりはここで行う。 ~
+~~ - infrastructure ~~
+	~ - APIやConfigファイル、Oauthなど外部とのやりとりはここで行う。 ~~
 
-~ - interfaces ~
-	~ - controllers ~
-		~ - infrastructureからusecaseを繋ぎの担当。 ~
-	~ - gateways ~
-		~ - APIのメソッドの記述。 ~
-	~ - presenters
-		~ - いわゆるクライアント側でUIの担当。 ~
+~~ - interfaces ~~
+	~~ - controllers ~~
+		~~ - infrastructureからusecaseを繋ぎの担当。 ~~
+	~~ - gateways ~
+		~~ - APIのメソッドの記述。 ~~
+	~~ - presenters~~
+		~~ - いわゆるクライアント側でUIの担当。 ~~
 
-~ - usecase ~
-	~ - ビジネスロジック層。まだ実装していないが基本的には依存関係逆転の法則に沿ったinterfaceとしての役割になりそう。 ~
+~~ - usecase ~~
+	~~ - ビジネスロジック層。まだ実装していないが基本的には依存関係逆転の法則に沿ったinterfaceとしての役割になりそう。 ~~
 
 # 追加する機能（現在実装中）
 - アカウント新規作成
