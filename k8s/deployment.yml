@@ -1,0 +1,26 @@
+# deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: luka-web-development
+
+# pod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: luka-app1
+  template:
+    metadata:
+      labels:
+        app: luka-app1
+    spec:
+      containers:
+      - name: luka-node
+        image: sgtkuc18m/luka-web
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
