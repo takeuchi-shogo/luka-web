@@ -16,19 +16,19 @@
 
 
 	function signup(e) {
-		_me.create(e.detail, (error, message, _data) => {
-			if (error) {
-				errorMessage = message
-				return
-			}
-			_me.signin({ screenName: e.detail.screenName, password: e.detail.password}, (error, message, data) => {
-				if (error) {
-					errorMessage = message
-					return
-				}
-				window.location.href = '/threads'
-			})
-		})
+		// _me.create(e.detail, (error, message, _data) => {
+		// 	if (error) {
+		// 		errorMessage = message
+		// 		return
+		// 	}
+		// 	_me.signin({ screenName: e.detail.screenName, password: e.detail.password}, (error, message, data) => {
+		// 		if (error) {
+		// 			errorMessage = message
+		// 			return
+		// 		}
+		// 		window.location.href = '/threads'
+		// 	})
+		// })
 	}
 
 </script>

@@ -96,6 +96,7 @@
 					params[key] = data[key]
 				}
 			})
+			isOpen()
 		})
 	}
 
@@ -136,7 +137,7 @@
 			<form>
 				<!-- DisplayName -->
 				<div class="px-4 py-3">
-					<FormInput  type={ types.text } bind:label={ labels.displayName } bind:placeholder={ placeholders.displayName } bind:value={ params.displayName } />
+					<FormInput type={ types.text } bind:label={ labels.displayName } bind:placeholder={ placeholders.displayName } bind:value={ params.displayName } />
 				</div>
 				<!-- self introduction -->
 				<!-- <FormInput /> -->

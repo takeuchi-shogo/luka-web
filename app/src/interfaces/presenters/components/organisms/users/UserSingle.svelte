@@ -47,7 +47,7 @@
 
 
 { #if isOpen }
-	<ProfileEditModal me={ me } bind:isOpenModal={ isOpen } />
+	<ProfileEditModal bind:me={ me } bind:isOpenModal={ isOpen } />
 { /if }
 { #if initialized }
 	<div class="flex flex-col">
