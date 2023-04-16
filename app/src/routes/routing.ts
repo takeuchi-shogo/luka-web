@@ -52,11 +52,11 @@ export const routes = [
 		component: '',
 	},
 	{
-		path: '/others',
+		path: '/settings',
 		component: '',
 	},
 	{
-		path: '/others/:category',
+		path: '/settings/:category',
 		component: '',
 	},
 	{
@@ -68,11 +68,11 @@ export const routes = [
 		component: '',
 	},
 	{
-		path: '/threads',
+		path: '/articles',
 		component: '',
 	},
 	{
-		path: '/threads/:id',
+		path: '/articles/:id',
 		component: '',
 	},
 	// {

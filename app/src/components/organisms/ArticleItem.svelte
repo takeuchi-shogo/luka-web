@@ -59,7 +59,7 @@
 		didSave={ update }
 	/>
 { /if }
-<div class="pt-8 sm:flex group">
+<div class="pt-4 sm:flex group">
 	<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
 		<!-- <img class="w-full rounded-md h-32 lg:w-32 object-cover" src="/public/img/BotIcon.jpeg" alt="sample icon"> -->
 	</div>
@@ -78,7 +78,7 @@
 		</div>
 		<h2 class="mt-3 font-medium leading-6">{ article.title }</h2>
 		<p class="mt-2 text-base font-normal text-gray-500">{ article.description }</p>
-		<div class="pt-8">
+		<div class="pt-4">
 			<div class="flex items-center justify-between text-slate-500">
 				<div class="flex space-x-4 md:space-x-8">
 					<div class="flex cursor-pointer items-center transition hover:text-slate-600">

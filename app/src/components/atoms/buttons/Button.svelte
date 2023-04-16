@@ -55,7 +55,7 @@
 </script>
 
 <button
-	class="{ color } flex mx-auto border-0 py-2 px-6 focus:outline-none rounded text-sm uppercase shadow-md hover:shadow-lg focus:shadow-lg focus:ring-0 active:shadow-lg transition duration-150 ease-in-out"
+	class="{ color } flex border-0 py-2 px-6 focus:outline-none rounded text-sm uppercase shadow-md hover:shadow-lg focus:shadow-lg focus:ring-0 active:shadow-lg transition duration-150 ease-in-out"
 	on:click|preventDefault={ click }
 >
 	<slot></slot>

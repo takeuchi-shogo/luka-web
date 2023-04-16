@@ -10,20 +10,20 @@
 </script>
 
 
-<style>
+<style lang="scss">
 
 </style>
 
 
 <section class="text-gray-600 body-font overflow-hidden hover:bg-gray-100">
-	<div class="container px-3 py-4 mx-auto">
-		<div class="flex flex-wrap m-12">
-			<div class="p-12 w-full flex flex-col items-start">
-				<span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">CATEGORY</span>
-				<h2 class="sm:text-2xl text-xl title-font font-medium text-gray-900 mt-4 mb-4">{ article.title }</h2>
+	<div class="container px-2 mx-auto">
+		<div class="flex flex-wrap">
+			<div class="w-full flex flex-col items-start">
+				<!-- <span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">CATEGORY</span> -->
+				<h2 class="sm:text-xl text-xl title-font font-bold text-gray-900 mt-4 mb-4">{ article.title }</h2>
 				<p class="leading-relaxed mb-8">{ article.description }</p>
-				<div class="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
-					<Link style="background-image: none;" to="/threads/{ article.id }" class="text-indigo-500 inline-flex items-center">Learn More
+				<div class="flex items-center flex-wrap pb-4 border-b-2 border-gray-100 mt-auto w-full">
+					<Link to="/articles/{ article.id }" class="text-indigo-500 inline-flex items-center">Learn More
 						<svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
 							<path d="M5 12h14"></path>
 							<path d="M12 5l7 7-7 7"></path>

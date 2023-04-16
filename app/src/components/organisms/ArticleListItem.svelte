@@ -12,12 +12,12 @@
 
 
 <div class="py-4 hover:bg-gray-100 border-b w-full">
-	<div class="pt-8 sm:flex group">
+	<div class="pt-4 sm:flex group">
 		<div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
 			<!-- <img class="w-full rounded-md h-32 lg:w-32 object-cover" src="public/img/BotIcon.jpeg" alt="sample icon"> -->
 		</div>
 		<div>
-			<div class="text-sm">{article.user.displayName }  <span class="text-gray-500">{ article.formatCreatedAt }</span></div>
+			<div class="text-sm">{article.user.displayName } <span class="text-gray-500">{ article.formatCreatedAt }</span></div>
 			<h2 class="mt-3 font-medium leading-6">{article.title }</h2>
 			<p class="mt-2 text-lg text-gray-500">{ article.description }</p>
 			<div class="pt-8">

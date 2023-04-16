@@ -85,13 +85,15 @@
 			<div class="">
 				<FormInput type={ 'text' } label={ 'タイトル' } placeholder={ 'タイトルを入力してください' } bind:value={ params.title }/>
 			</div>
-			<label
-				class="block uppercase text-gray-600 text-xs font-bold mb-1"
-				for="discription"
-			>
-				内容
-			</label>
-			<textarea class="w-full h-56 px-3 py-3 placeholder-gray-400 text-gray-500 rounded text-sm shadow" bind:value={ params.description } placeholder="投稿内容を入力してください"></textarea>
+			<div>
+				<label
+					class="block uppercase text-gray-600 text-xs font-bold mb-2"
+					for="discription"
+				>
+					内容
+				</label>
+				<textarea class="border p-3 border-gray-400 h-56 placeholder-gray-400 text-gray-600 bg-white rounded text-sm focus:border-violet-600 w-full" bind:value={ params.description } placeholder="投稿内容を入力してください"></textarea>
+			</div>
 		</ModalContent>
 		<ModalFooter>
 			<div>
