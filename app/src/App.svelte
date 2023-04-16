@@ -3,10 +3,10 @@
 	import { onMount } from 'svelte'
 	import { Router } from 'svelte-routing'
 
-	import MeRepository from 'interfaces/database/me_repository'
+	import MeRepository from 'database/me_repository'
 
-	import Index from './interfaces/presenters/Index.svelte'
-	import Dashboard from './interfaces/presenters/ApplicationPage.svelte'
+	import Index from './Index.svelte'
+	import Dashboard from './ApplicationPage.svelte'
 
 	import './lib/Tailwind.css'
 

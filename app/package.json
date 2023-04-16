@@ -29,6 +29,7 @@
     "dayjs": "^1.11.6",
     "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
+    "spaper": "^1.0.0",
     "svelte-routing": "^1.6.0"
   }
 }

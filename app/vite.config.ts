@@ -15,7 +15,10 @@ export default defineConfig({
 		'models': path.resolve('src/models'),
 		'api': path.resolve('src/api'),
 		'config': path.resolve('src/config'),
-		'interfaces': path.resolve('src/interfaces'),
+		'components': path.resolve('src/components'),
+		'database': path.resolve('src/database'),
+		'features': path.resolve('src/features'),
+		'pages': path.resolve('src/pages'),
 		'lib': path.resolve('src/lib'),
 		'utils': path.resolve('src/utils')
 		// 'usecase': path.resolve('src/usecase')
