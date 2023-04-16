@@ -6,7 +6,7 @@
 
 	import type Article from 'models/articles'
 
-	import { Button } from 'spaper'
+	import Button from '../atoms/buttons/Button.svelte'
 	import ArticleMenuModal from '../../features/articles/ui/ArticleMenuModal.svelte'
 	import ArticleEditModal from '../../features/articles/ui/ArticleEditModal.svelte'
 
@@ -69,7 +69,7 @@
 				{ article.user.displayName }  <span class="text-gray-500">{ article.formatCreatedAt }</span>
 			</div>
 			<div>
-				<Button type={ 'primary' } on:click={ isOpen }>
+				<Button type={ 'light' } on:click={ isOpen }>
 					<span class="text-sm">
 						<i class="fa-solid fa-ellipsis-vertical"></i>
 					</span>

@@ -1,9 +1,7 @@
 <script lang="ts">
 
 	import type User from 'models/users'
-	import { Button } from 'spaper'
-	// import Button, { Label } from '@smui/button'
-	// import IconButton from '@smui/icon-button'
+	import Button from 'components/atoms/buttons/Button.svelte'
 
 
 	export let user:User = null

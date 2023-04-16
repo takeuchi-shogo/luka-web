@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-	import RadioButton from 'interfaces/presenters/components/atoms/inputs/RadioButton.svelte'
+	import RadioButton from 'components/atoms/inputs/RadioButton.svelte'
 
 	export let value
 	export let group

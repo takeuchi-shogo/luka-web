@@ -6,15 +6,14 @@
 
 	import Me from 'database/me_repository'
 
-	import { Button, Form, Modal, Input, Select } from 'spaper'
-	// import FormInput from 'components/molecules/FormInput.svelte'
-	// import FormSelect from 'components/molecules/FormSelect.svelte'
-	// import ModalCard from 'components/atoms/modals/ModalCard.svelte'
-	// import ModalContainer from 'components/atoms/modals/ModalContainer.svelte'
+	import Button from 'components/atoms/buttons/Button.svelte'
+	import FormInput from 'components/molecules/FormInput.svelte'
+	import FormSelect from 'components/molecules/FormSelect.svelte'
+	import ModalCard from 'components/atoms/modals/ModalCard.svelte'
+	import ModalContainer from 'components/atoms/modals/ModalContainer.svelte'
 	import ModalContent from 'components/atoms/modals/ModalContent.svelte'
 	import ModalFooter from 'components/atoms/modals/ModalFooter.svelte'
-	// import ModalHeader from 'components/atoms/modals/ModalHeader.svelte'
-	// import Select from 'components/atoms/inputs/Select.svelte';
+	import ModalHeader from 'components/atoms/modals/ModalHeader.svelte'
 
 
 	const _me = new Me
@@ -119,47 +118,54 @@
 </style>
 
 
-<Modal bind:active={ isOpenModal } title="Edit Profile" class="w-3/4">
-	
-	<ModalContent>
-		<form>
-			<!-- DisplayName -->
-			<Form>
-				<Input label={ 'Account Name' } bind:placeholder={ placeholders.displayName } bind:value={ params.displayName }/>
-			</Form>
-			<!-- self introduction -->
-			<!-- <FormInput /> -->
-			<!-- Email -->
-			<Form>
-				<Input label={ 'Email Address' } bind:placeholder={ placeholders.email } bind:value={ params.email }/>
-			</Form>
-			<!-- Tel -->
-			<!-- <FormInput /> -->
-			<!-- Age -->
-			<Form>
-				<Input type={ 'number' } label={ 'Age' } bind:placeholder={ placeholders.age } bind:value={ params.age }/>
-			</Form>
-			<!-- Gender -->
-			<Form>
-				<Select label={ 'Gender' } bind:value={ params.gender }>
-					{ #each genders as gender }
-						<option value={ gender.value }>{ gender.text }</option>
-					{ /each }
-				</Select>
-			</Form>
-			<!-- Prefecture -->
-			<Form>
-				<Select label={ 'Prefecture' } bind:value={ params.prefecture }>
-					{ #each prefectures as prefecture }
-						<option value={ prefecture.value }>{ prefecture.text }</option>
-					{ /each }
-				</Select>
-			</Form>
-		</form>
-	</ModalContent>
-	<ModalFooter>
-		<Button type="primary" on:click={ save }>
-			保存する
-		</Button>
-	</ModalFooter>
-</Modal>
+<ModalContainer>
+	<ModalCard>
+		<ModalHeader>
+			<h3 class="text-xl font-semibold text-gray-500">
+				投稿
+			</h3>
+			<button
+				type="button"
+				class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+				on:click={ isOpen }
+			>
+				<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+				<span class="sr-only">Close modal</span>
+			</button>
+		</ModalHeader>
+		<ModalContent>
+			<form>
+				<!-- DisplayName -->
+				<div class="px-4 py-3">
+					<FormInput type={ types.text } bind:label={ labels.displayName } bind:placeholder={ placeholders.displayName } bind:value={ params.displayName } />
+				</div>
+				<!-- self introduction -->
+				<!-- <FormInput /> -->
+				<!-- Email -->
+				<div class="px-4 py-3">
+					<FormInput type={ types.email } bind:label={ labels.email } bind:placeholder={ placeholders.email } bind:value={ params.email } />
+				</div>
+				<!-- Tel -->
+				<!-- <FormInput /> -->
+				<!-- Age -->
+				<div class="px-4 py-3">
+					<FormInput type={ types.text } bind:label={ labels.age } bind:placeholder={ placeholders.age } bind:value={ params.age } />
+				</div>
+				<!-- Gender -->
+				<div class="px-4 py-3">
+					<FormSelect bind:label={ labels.gender } bind:value={ params.gender } options={ genders }/>
+				</div>
+				<!-- <FormInput type={ types.text } bind:label={ labels.gender } bind:placeholder={ placeholders.gender } bind:value={ params.gender } /> -->
+				<!-- Prefecture -->
+				<div class="px-4 py-3">
+					<FormSelect bind:label={ labels.prefecture } bind:value={ params.prefecture } options={ prefectures } />
+				</div>
+			</form>
+		</ModalContent>
+		<ModalFooter>
+			<Button on:click={ save }>
+				保存する
+			</Button>
+		</ModalFooter>
+	</ModalCard>
+</ModalContainer>

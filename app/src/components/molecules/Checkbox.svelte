@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-	import CheckBox from 'interfaces/presenters/components/atoms/inputs/CheckBox.svelte'
+	import CheckBox from 'components/atoms/inputs/CheckBox.svelte'
 
 
 	export let checked: boolean = false

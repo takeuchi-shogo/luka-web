@@ -5,7 +5,7 @@
 
 	import ArticleRepository from 'database/article_repository'
 
-	import { Button } from 'spaper'
+	import Button from 'components/atoms/buttons/Button.svelte'
 	import FormInput from 'components/molecules/FormInput.svelte'
 	import ModalCard from 'components/atoms/modals/ModalCard.svelte'
 	import ModalContainer from 'components/atoms/modals/ModalContainer.svelte'

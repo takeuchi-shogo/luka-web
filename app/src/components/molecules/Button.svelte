@@ -1,7 +1,7 @@
 
 <script lang="ts">
 
-	import IconButton from 'interfaces/presenters/components/atoms/buttons/IconButton.svelte'
+	import IconButton from 'components/atoms/buttons/IconButton.svelte'
 
 	export let cnt: number = 0
 
